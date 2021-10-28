@@ -15,7 +15,7 @@
   ![dd_if](/03-sysadmin-05-fs/img/image9.png)
   
   - `truncate -s200G ./sparse-file`
-  ![truncate](/03-sysadmin-05-fs/img/image14.png)
+  ![touch](/03-sysadmin-05-fs/img/image14.png)
 
 
 
@@ -26,6 +26,9 @@
 * Файлы, являющиеся жесткой ссылкой на один объект, не могут иметь разные права доступа и владельца, т.к. эти объекты файловой системы 
 имеют одну и ту же inode (т.е. это один и тот же файл, но созданный под разными именами).
 
+  ![truncate](/03-sysadmin-05-fs/img/image25.png)
+  
+  ![find](/03-sysadmin-05-fs/img/image11.png)
 
 3. Сделайте `vagrant destroy` на имеющийся инстанс Ubuntu. Замените содержимое Vagrantfile следующим:
 
