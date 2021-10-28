@@ -12,6 +12,8 @@
 			
 * Команды в Linux для создания разрежённого файла размером 200 Гб:
   - `dd if=/dev/zero of=./sparse-file bs=1 count=0 seek=200G`
+  ![dd_if](/03-sysadmin-05-fs/img/image9.png)
+  
   - `truncate -s200G ./sparse-file`
 
 
