@@ -20,7 +20,7 @@
     - [netology.jsonnet](netology.jsonnet) – jsonnet.
 1. Убедитесь, что работает подсветка синтаксиса, файлы должны выглядеть вот так:
     - Terraform: ![Терраформ](img/terraform.png)
-    - Bash: ![bahs](img/bash.png)
+    - Bash: ![bahs](img/netology_sh.PNG)
     - Markdown: ![markdown](img/markdown.png)
     - Yaml: ![Yaml](img/yaml.png)
     - Jsonnet: ![Jsonnet](img/jsonnet.png)
