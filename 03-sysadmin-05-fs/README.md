@@ -29,6 +29,7 @@
   ![truncate](/03-sysadmin-05-fs/img/image25.png)
   
   ![find](/03-sysadmin-05-fs/img/image11.png)
+  ![chown](/03-sysadmin-05-fs/img/image24.png)
 
 3. Сделайте `vagrant destroy` на имеющийся инстанс Ubuntu. Замените содержимое Vagrantfile следующим:
 
