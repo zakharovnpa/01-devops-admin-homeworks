@@ -54,9 +54,12 @@ HOST: stackoverflow.com
 - отправьте запрос http://stackoverflow.com
 - найдите первый ответ HTTP сервера, откройте вкладку `Headers`
 
+    **Ответ:**
+    В браузере Firefix Mozilla F12 --> Сеть --> Заголовки:
 
-    ![telnet-stackowerflow-80](/03-sysadmin-06-net/img/image2.png)
     ![headers](/03-sysadmin-06-net/img/image4.PNG)
+    
+    ![telnet-stackowerflow-80](/03-sysadmin-06-net/img/image2.png)
     
 - укажите в ответе полученный HTTP код.
 
@@ -72,7 +75,7 @@ HOST: stackoverflow.com
       feature-policy: microphone 'none'; speaker 'none'
       content-security-policy: upgrade-insecure-requests; frame-ancestors 'self' https://stackexchange.com
       accept-ranges: bytes
-      date: Sat, 18 Sep 2021 06:05:55 GMT
+      date: Sat, 30 Oct 2021 12:16:37 GMT
       via: 1.1 varnish
       x-served-by: cache-bma1643-BMA
       x-cache: MISS
@@ -85,7 +88,7 @@ HOST: stackoverflow.com
       Request headers:
       GET / HTTP/2
       Host: stackoverflow.com
-      User-Agent: Mozilla/5.0 (X11; Linux i686; rv:87.0) Gecko/20100101 Firefox/87.0
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; …) Gecko/20100101 Firefox/56.0
       Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
       Accept-Language: en-US,en;q=0.5
       Accept-Encoding: gzip, deflate, br
@@ -96,6 +99,10 @@ HOST: stackoverflow.com
 
      ```
 - проверьте время загрузки страницы, какой запрос обрабатывался дольше всего?
+
+   ![timing-doc](/03-sysadmin-06-net/img/image5.png)
+   ![timing-doc-full](/03-sysadmin-06-net/img/image6.png)
+
 - приложите скриншот консоли браузера в ответ.
 
     **Ответ:**
