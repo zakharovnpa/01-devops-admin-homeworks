@@ -53,8 +53,8 @@ HOST: stackoverflow.com
 - откройте вкладку `Network`
 - отправьте запрос http://stackoverflow.com
 - найдите первый ответ HTTP сервера, откройте вкладку `Headers`
+    ![telnet-stackowerflow-80](/img/image2.png)
     ![telnet-stackowerflow-80](03-sysadmin-06-net/img/image2.png)
-![telnet-stackowerflow-80](/img/image2.png)
 - укажите в ответе полученный HTTP код.
 
      ```bash
