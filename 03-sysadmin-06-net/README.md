@@ -55,9 +55,8 @@ HOST: stackoverflow.com
 - найдите первый ответ HTTP сервера, откройте вкладку `Headers`
 
 
-    ![telnet-stackowerflow](03-sysadmin-06-net/img/image2.png)
-    
-    ![telnet-stackowerflow-80](03-sysadmin-06-net/img/image2.png)
+    ![telnet-stackowerflow-80](/03-sysadmin-06-net/img/image2.png)
+    ![headers](/03-sysadmin-06-net/img/image4.png)
     
 - укажите в ответе полученный HTTP код.
 
