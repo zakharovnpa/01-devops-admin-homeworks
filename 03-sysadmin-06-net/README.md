@@ -146,10 +146,24 @@ HOST: stackoverflow.com
 
     **Ответ:**
 
-* Провайдер: Golden Telecom
+* Провайдер: BEELINE
 * Автономная система: AS3216
+
+```bash
+root@vagrant:~# whois -h whois.ripe.net 2.95.218.183
+inetnum:        2.94.0.0 - 2.95.255.255
+netname:        BEELINE-BROADBAND
+descr:          Dynamic IP Pool for Broadband Customers
+country:        RU
+% Information related to '2.95.0.0/16AS3216'
+
+route:          2.95.0.0/16
+descr:          RU-CORBINA BROADBAND BLOCK SOVAM
+origin:         AS3216
+
+
+```
  
-  ![whois](/03-sysadmin-06-net/img/image8.png)
  
 6. Через какие сети проходит пакет, отправленный с вашего компьютера на адрес 8.8.8.8? Через какие AS? Воспользуйтесь утилитой `traceroute`
 
