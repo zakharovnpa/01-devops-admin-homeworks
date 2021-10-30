@@ -56,7 +56,7 @@ HOST: stackoverflow.com
 
 
     ![telnet-stackowerflow-80](/03-sysadmin-06-net/img/image2.png)
-    ![headers](/03-sysadmin-06-net/img/image4.png)
+    ![headers](/03-sysadmin-06-net/img/image4.PNG)
     
 - укажите в ответе полученный HTTP код.
 
