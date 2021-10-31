@@ -109,6 +109,8 @@ HOST: stackoverflow.com
 
      ```
 - проверьте время загрузки страницы, какой запрос обрабатывался дольше всего?
+
+    **Ответ:**
     
     Дольше всего обрабатывался запрос на получение html кода страницы (содержимое - javascript).
     
@@ -169,7 +171,14 @@ origin:         AS3216
 
     **Ответ:**
     
-  ![traceroute](/03-sysadmin-06-net/img/image9.png)
+   Воспользуемся командой `traceroute -IAn 8.8.8.8`. 
+* Ключи команды:
+  - `-I, --icmp` Разрешение использования ICMP ответов при диагностике
+  - `-A, --as-path-lookups` Выполненние поиска путей AS в реестрах маршрутизации и распечатка результаты сразу после соответствующих адресов.
+  - `-n` Не отображать имена хостов при распечатке результатов              
+               
+               
+  ![traceroute](/03-sysadmin-06-net/img/image15.png)
  
 7. Повторите задание 5 в утилите `mtr`. На каком участке наибольшая задержка - delay?
 
@@ -182,7 +191,71 @@ origin:         AS3216
 
     **Ответ:**
     
-dig - DNS lookup utility
+Воспользуемся утилитой `dig` для поиска DNS:
+
+Команда `dig +trace @8.8.8.8 dns.google`
+* Ключи команды:
+  - `+trace` Отслеживание делегирования от  корневых DNS серверов
+  - `@8.8.8.8` Параметр `[@global-server]`
+  - `dns.google` Параметр `[domain]`      
+
+**Результат:**
+- За доменное имя dns.google отвечают авторизовыанные DNS сервера:
+   ```bash
+   ns2.zdns.google.
+   ns1.zdns.google.
+   ns4.zdns.google.
+   ns3.zdns.google.
+   ```
+- За записи А для IPv4 адресов отвечают авторизовыанные DNS сервера с адресами `8.8.8.8` и `8.8.4.4`.
+
+Вывод команды `dig +trace @8.8.8.8 dns.google`
+```bash
+root@vagrant:~# dig +trace @8.8.8.8 dns.google
+
+; <<>> DiG 9.16.1-Ubuntu <<>> +trace @8.8.8.8 dns.google
+; (1 server found)
+;; global options: +cmd
+.                       72843   IN      NS      c.root-servers.net.
+.                       72843   IN      NS      h.root-servers.net.
+.                       72843   IN      NS      g.root-servers.net.
+.                       72843   IN      NS      l.root-servers.net.
+.                       72843   IN      NS      j.root-servers.net.
+.                       72843   IN      NS      e.root-servers.net.
+.                       72843   IN      NS      m.root-servers.net.
+.                       72843   IN      NS      d.root-servers.net.
+.                       72843   IN      NS      b.root-servers.net.
+.                       72843   IN      NS      a.root-servers.net.
+.                       72843   IN      NS      f.root-servers.net.
+.                       72843   IN      NS      k.root-servers.net.
+.                       72843   IN      NS      i.root-servers.net.
+.                       72843   IN      RRSIG   NS 8 0 518400 20211112050000 20211030040000 14748 . Ro1b+2eE6rsjzrzwCm03Q/EWEA2d0tflWW3xaoERzyzrn2Ue2TWXZkXR JW9FnAFUQtGMHwX7ILjTCsnSHsJRuGHgi7GlkGPsNM6UO6uiVgciEiC1 Dnk735raOVSFNc2Fm8Un0nZcwD1Wse/Ggop+HBLNaPP8feeCIGpSOq6M EcR4eHAmj87+ilAbi9hmZXw7pz+z1WfLnNRbJUpdeFkO6kyrN1GSrWG/ anrTMGccUKqhSm07T6KIyPYt78SLCuQnIsDvw92srG9+wPWKrY/S+bTs a1zOisGxJLXidAyiIOWQEV+tUNTANqB7YjJezIPH2XvNjUuZOxkBFORN 1mG2fg==
+;; Received 525 bytes from 8.8.8.8#53(8.8.8.8) in 71 ms
+
+google.                 172800  IN      NS      ns-tld3.charlestonroadregistry.com.
+google.                 172800  IN      NS      ns-tld4.charlestonroadregistry.com.
+google.                 172800  IN      NS      ns-tld1.charlestonroadregistry.com.
+google.                 172800  IN      NS      ns-tld2.charlestonroadregistry.com.
+google.                 172800  IN      NS      ns-tld5.charlestonroadregistry.com.
+google.                 86400   IN      DS      6125 8 2 80F8B78D23107153578BAD3800E9543500474E5C30C29698B40A3DB2 3ED9DA9F
+google.                 86400   IN      RRSIG   DS 8 1 86400 20211112050000 20211030040000 14748 . Uu5hWVaBJp9EC7mnkWNJu25Bn1F+UHv8SGiS6NX4sxmpXfakZK4H3FRl baGzZ4QVxFmTNsnCqLosAf0cuOyOlL5GkzbNj6il+KO3ZRZhcd7BCvwV SRppVIVnyhCGd5dNbmJLpNutK2Qpk0/CvnBAxLYIU2frihw1N38goTAG KuKENgooAcxiiTc+AE2CC3zqMlyvXLsLQMLw1QQE6wtTJQ+67qxe9xmI rb9E8OCx+VpDY+m1EiRsTyamwGik5ACHIUxETp+kWUYaQ1MKN9z/3PKy HN9ZEDh9qJRlWe1dzsVDjOjelU66Cwr6e44xkjMZ97OTES1c1LjkYV7I JW3tcQ==
+;; Received 758 bytes from 192.112.36.4#53(g.root-servers.net) in 135 ms
+
+dns.google.             10800   IN      NS      ns2.zdns.google.
+dns.google.             10800   IN      NS      ns1.zdns.google.
+dns.google.             10800   IN      NS      ns4.zdns.google.
+dns.google.             10800   IN      NS      ns3.zdns.google.
+dns.google.             3600    IN      DS      56044 8 2 1B0A7E90AA6B1AC65AA5B573EFC44ABF6CB2559444251B997103D2E4 0C351B08
+dns.google.             3600    IN      RRSIG   DS 8 2 3600 20211120084745 20211029084745 47268 google. JRvNDDAgF7169V+4ROpz5k75l+1Ekfh21fY9QfSPqMSJYqdELLnNEO4z MvuMtnMdtIimeX5zQxasTHgzxUD5WnejzpwpKAtOwM7dCyVeKf/QYemA 3GLgtGD7LCoGEkE97GjX1qKURxFBE1GDXXwvGYTSYRGdPpIweZwDBSR0 p0M=
+;; Received 506 bytes from 216.239.60.105#53(ns-tld5.charlestonroadregistry.com) in 155 ms
+
+dns.google.             900     IN      A       8.8.8.8
+dns.google.             900     IN      A       8.8.4.4
+dns.google.             900     IN      RRSIG   A 8 2 900 20211129150936 20211030150936 1773 dns.google. di/HNCpV7v5+xq4/mJaDHWvCUT67Gmn2APYiGTlCn55vfAeCFS3y9h4i dVY3bddNgt0expepd0ytWOxhUfFot2r8TCvVKK9fs8ovxHj7W0oY52QB 0Mo1OJYedGaCmtazD07uUXq7CwBOWFjObM/Z1iaGbAlo2B3W5dAGtGql yB8=
+;; Received 241 bytes from 216.239.38.114#53(ns4.zdns.google) in 55 ms
+
+
+```
  
 9. Проверьте PTR записи для IP адресов из задания 7. Какое доменное имя привязано к IP? воспользуйтесь утилитой `dig`
 
