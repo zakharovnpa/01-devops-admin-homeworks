@@ -8,8 +8,9 @@
     show bgp x.x.x.x/32
     ```
    **Ответ:**
-     - Вывод команды [sh-ip-route](sh-ip-route.bash)
+   
      - Подклбчение к роутеру [route-views.routeviews.org](route-views.bash)
+     - Вывод команды [sh-ip-route](sh-ip-route.bash)
      - Вывод команды [sh-bgp](sh-bgp.bash)
      - Вывод команды [traceroute](traceroute.bash)
 
