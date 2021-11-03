@@ -51,8 +51,6 @@
     - sunrpc - SUN Remote Procedure Call, порт 111 TCP
     - ipp - IPP (Internet Printing Protocol), порт 631 TCP
     
-   [Источник информации о портах](https://ru.adminsub.net/tcp-udp-port-finder)
-
    Просмотр статистики по протоколу TCP командой [netstat -st](netstat-st.bash)
  
 4. Проверьте используемые UDP сокеты в Ubuntu, какие протоколы и приложения используют эти порты?
@@ -62,10 +60,14 @@
    - Вывод [netstat -ua](netstat-ua) показывает список соединений по UDP
 
     По результатам диагностики состояний соединения зафиксированы протоколы:
-    - ntp
-    - bootpc
-    - 
+    - ntp - Network Time Protocol, 123 UDP
+    - bootpc - Bootstrap Protocol (BOOTP) Client; also used by Dynamic Host Configuration Protocol (DHCP) (Official), 68 UDP
+    - ipp - IPP (Internet Printing Protocol), порт 631 UDP
+    - sunrpc - SUN Remote Procedure Call, порт 111 UDP
+    - netbios - NetBIOS NetBIOS Name Service (Official), порт 137 UDP
+    - mdns - Multicast DNS, 5353 UDP
     
+       [Источник информации о портах](https://ru.adminsub.net/tcp-udp-port-finder)
     
    - Просмотр статистики по протоколу UDP командой [netstat -su](netstat-su.bash)
  
