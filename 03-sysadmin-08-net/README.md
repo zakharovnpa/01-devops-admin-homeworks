@@ -8,6 +8,7 @@
     show bgp x.x.x.x/32
     ```
    **Ответ:**
+     - [sh-ip-route.bash](sh-ip-route.bash) – sh-ip-route.bash,
      - [route-views.bash](route-views.bash) – route-views.bash,
      - [sh-bgp.bash](sh-bgp.bash) – sh-bgp.bash,
      - [traceroute.bash](traceroute.bash) – traceroute.bash,
