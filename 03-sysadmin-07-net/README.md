@@ -167,13 +167,13 @@
 
     **Ответ:**
     
-    	![12](/03-sysadmin-07-net/img/image12.png)
+    ![12](/03-sysadmin-07-net/img/image12.png)
 	  
-	![13](/03-sysadmin-07-net/img/image13.png)
+    ![13](/03-sysadmin-07-net/img/image13.png)
 		
-	![14](/03-sysadmin-07-net/img/image14.png)
+    ![14](/03-sysadmin-07-net/img/image14.png)
 		  
-	![15](/03-sysadmin-07-net/img/image15.png)
+    ![15](/03-sysadmin-07-net/img/image15.png)
 
 5. Сколько IP адресов в сети с маской /29 ? Сколько /29 подсетей можно получить из сети с маской /24. Приведите несколько примеров /29 подсетей внутри сети 10.10.10.0/24.
 
