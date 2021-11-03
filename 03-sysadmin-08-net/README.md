@@ -9,10 +9,10 @@
     ```
    **Ответ:**
    
-     - Подключение к роутеру [route-views.routeviews.org](route-views.bash)
-     - Вывод команды [sh-ip-route](sh-ip-route.bash)
-     - Вывод команды [sh-bgp](sh-bgp.bash)
-     - Вывод команды [traceroute](traceroute.bash)
+     - Листинг подключения к роутеру [route-views.routeviews.org](route-views.bash)
+     - Листинг команды [sh-ip-route](sh-ip-route.bash)
+     - Листинг команды [sh-bgp](sh-bgp.bash)
+     - Листинг команды [traceroute](traceroute.bash)
 
    Сайт с адресами публичных роутеров [Public Route Servers](http://www.routeservers.org/)
  
@@ -23,7 +23,7 @@
 3. Проверьте открытые TCP порты в Ubuntu, какие протоколы и приложения используют эти порты? Приведите несколько примеров.
  
    **Ответ:**
-    - Вывод [netstat -ta](netstat-ta.bash) показывает список соединений по TCP:
+    - Листинг [netstat -ta](netstat-ta.bash) показывает список соединений по TCP:
       -  установленные соединения  `ESTABLISHED `, 
       -  ожидающие открытия соединения ` TIME_WAIT `, 
       -  а также сокеты, слушающие сеть и ожидающие подключения ` LISTEN `.
