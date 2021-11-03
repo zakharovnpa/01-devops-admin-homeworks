@@ -1,0 +1,30 @@
+root@mx-linux:~# netstat -ua
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+udp        0      0 0.0.0.0:47594           0.0.0.0:*
+udp        0      0 0.0.0.0:ipp             0.0.0.0:*
+udp        0      0 localhost:836           0.0.0.0:*
+udp        0      0 localhost:8125          0.0.0.0:*
+udp        0      0 0.0.0.0:bootpc          0.0.0.0:*
+udp        0      0 0.0.0.0:sunrpc          0.0.0.0:*
+udp        0      0 mx-linux:ntp            0.0.0.0:*
+udp        0      0 localhost:ntp           0.0.0.0:*
+udp        0      0 0.0.0.0:ntp             0.0.0.0:*
+udp        0      0 0.0.0.0:50301           0.0.0.0:*
+udp        0      0 192.168.1.25:netbios-ns 0.0.0.0:*
+udp        0      0 mx-linux:netbios-ns     0.0.0.0:*
+udp        0      0 0.0.0.0:netbios-ns      0.0.0.0:*
+udp        0      0 192.168.1.2:netbios-dgm 0.0.0.0:*
+udp        0      0 mx-linux:netbios-dgm    0.0.0.0:*
+udp        0      0 0.0.0.0:netbios-dgm     0.0.0.0:*
+udp        0      0 0.0.0.0:mdns            0.0.0.0:*
+udp6       0      0 [::]:48563              [::]:*
+udp6       0      0 [::]:52670              [::]:*
+udp6       0      0 [::]:1716               [::]:*
+udp6       0      0 localhost:8125          [::]:*
+udp6       0      0 [::]:sunrpc             [::]:*
+udp6       0      0 mx-linux:ntp            [::]:*
+udp6       0      0 localhost:ntp           [::]:*
+udp6       0      0 [::]:ntp                [::]:*
+udp6       0      0 [::]:mdns               [::]:*
+root@mx-linux:~#
