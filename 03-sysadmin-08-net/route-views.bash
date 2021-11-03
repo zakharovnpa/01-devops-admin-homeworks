@@ -1,3 +1,8 @@
+root@mx-linux:~# telnet route-views.routeviews.org
+Trying 128.223.51.103...
+Connected to route-views.routeviews.org.
+Escape character is '^]'.
+C
 **********************************************************************
 
                     RouteViews BGP Route Viewer
