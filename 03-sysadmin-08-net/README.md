@@ -23,7 +23,9 @@
 3. Проверьте открытые TCP порты в Ubuntu, какие протоколы и приложения используют эти порты? Приведите несколько примеров.
  
    **Ответ:**
-    - Листинг [netstat -ta](netstat-ta.bash) показывает список соединений по TCP:
+   Для вывода списка сетевых соединений воспользуемся утилитами ` netstat ` и ` ss `.
+   
+    - Листинг [netstat -ta](netstat-ta.bash) показывает список соединений TCP:
       -  установленные соединения  `ESTABLISHED `, 
       -  ожидающие открытия соединения ` TIME_WAIT `, 
       -  а также сокеты, слушающие сеть и ожидающие подключения ` LISTEN `.
@@ -50,12 +52,14 @@
     - microsoft-ds - Microsoft-DS Active Directory, Windows shares (Official), порт 445 TCP
     - sunrpc - SUN Remote Procedure Call, порт 111 TCP
     - ipp - IPP (Internet Printing Protocol), порт 631 TCP
-    
-   Просмотр статистики по протоколу TCP командой [netstat -st](netstat-st.bash)
+
+    Просмотр статистики по протоколу TCP [netstat -st](netstat-st.bash).
+    Листинг команды [ss-t](browser-ss-t.bash)
  
 4. Проверьте используемые UDP сокеты в Ubuntu, какие протоколы и приложения используют эти порты?
  
    **Ответ:**
+   Для вывода списка сетевых соединений воспользуемся утилитами ` netstat ` и ` ss `.
    
    - Вывод [netstat -ua](netstat-ua) показывает список соединений по UDP
 
