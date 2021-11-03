@@ -54,7 +54,8 @@
     - ipp - IPP (Internet Printing Protocol), порт 631 TCP
 
     Просмотр статистики по протоколу TCP [netstat -st](netstat-st.bash).
-    Листинг команды [ss-t](browser-ss-t.bash), [ss -n](ss-n.bash)
+    Листинг команды [ss-t](browser-ss-t.bash), [ss -n](ss-n.bash), 
+    Порты в ожидании входящего трафика [ss -l](ss-l.bash)
  
 4. Проверьте используемые UDP сокеты в Ubuntu, какие протоколы и приложения используют эти порты?
  
