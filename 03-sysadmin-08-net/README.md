@@ -8,6 +8,7 @@
     show bgp x.x.x.x/32
     ```
    **Ответ:**
+     - [route-view.bash](route-view.bash) – route-view.bash,
  
 2. Создайте dummy0 интерфейс в Ubuntu. Добавьте несколько статических маршрутов. Проверьте таблицу маршрутизации.
  
