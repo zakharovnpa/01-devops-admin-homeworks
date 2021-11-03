@@ -10,6 +10,7 @@
    **Ответ:**
      - [route-views.bash](route-views.bash) – route-views.bash,
      - [sh-bgp.bash](sh-bgp.bash) – sh-bgp.bash,
+     - [traceroute.bash](traceroute.bash) – traceroute.bash,
  
 2. Создайте dummy0 интерфейс в Ubuntu. Добавьте несколько статических маршрутов. Проверьте таблицу маршрутизации.
  
