@@ -79,7 +79,7 @@
  
    **Ответ:**
      
-     Схема домашней сети ![my_home_net.png](/03-sysadmin-08-net/img/my_home_net.png)
+     Схема домашней сети ![my_home_net.png](/03-sysadmin-08-net/img/my_home_net-2.png)
  
  ---
 ## Задание для самостоятельной отработки (необязательно к выполнению)
