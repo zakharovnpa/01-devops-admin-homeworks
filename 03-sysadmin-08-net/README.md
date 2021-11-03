@@ -8,10 +8,12 @@
     show bgp x.x.x.x/32
     ```
    **Ответ:**
-     - [sh-ip-route.bash](sh-ip-route.bash) – sh-ip-route.bash,
-     - [route-views.bash](route-views.bash) – route-views.bash,
-     - [sh-bgp.bash](sh-bgp.bash) – sh-bgp.bash,
-     - [traceroute.bash](traceroute.bash) – traceroute.bash,
+     - Вывод команды [sh-ip-route](sh-ip-route.bash)
+     - Подклбчение к роутеру [route-views.routeviews.org](route-views.bash)
+     - Вывод команды [sh-bgp](sh-bgp.bash)
+     - Вывод команды [traceroute](traceroute.bash)
+
+   Сайт с адресами публичных роутеров [Public Route Servers](http://www.routeservers.org/)
  
 2. Создайте dummy0 интерфейс в Ubuntu. Добавьте несколько статических маршрутов. Проверьте таблицу маршрутизации.
  
