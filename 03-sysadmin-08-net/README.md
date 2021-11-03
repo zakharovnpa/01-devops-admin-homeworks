@@ -43,13 +43,15 @@
      - При локальном или удаленном адресе ` [::]:* ` - разрешены все адреса для IPv6 и все порты
 
     По результатам диагностики состояний соединения зафиксированы протоколы:
-    - ssh
-    - netbios
+    - ssh - Secure Shell (SSH), порт 22 TCP
+    - netbios - NetBIOS NetBIOS Name Service (Official), порт 137 TCP
     - https - HTTPS (Hypertext Transfer Protocol over SSL/TLS) (Official), порт 443 TCP
     - http - Hypertext Transfer Protocol (HTTP) (Official), порт 80 TCP
     - microsoft-ds - Microsoft-DS Active Directory, Windows shares (Official), порт 445 TCP
     - sunrpc - SUN Remote Procedure Call, порт 111 TCP
     - ipp - IPP (Internet Printing Protocol), порт 631 TCP
+    
+   [Источник информации о портах](https://ru.adminsub.net/tcp-udp-port-finder)
 
    Просмотр статистики по протоколу TCP командой [netstat -st](netstat-st.bash)
  
@@ -57,7 +59,14 @@
  
    **Ответ:**
    
-   - Вывод [netstat -ua](netstat-ua) показывает список соединений по UDP:
+   - Вывод [netstat -ua](netstat-ua) показывает список соединений по UDP
+
+    По результатам диагностики состояний соединения зафиксированы протоколы:
+    - ntp
+    - bootpc
+    - 
+    
+    
    - Просмотр статистики по протоколу UDP командой [netstat -su](netstat-su.bash)
  
 5. Используя diagrams.net, создайте L3 диаграмму вашей домашней сети или любой другой сети, с которой вы работали. 
