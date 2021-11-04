@@ -55,7 +55,7 @@
 
     Примеры использования утилит ` netstat ` и ` ss `:
     - Просмотр статистики по протоколу TCP [netstat -st](netstat-st.bash).
-    - Листинг команды [ss-t](browser-ss-t.bash), [ss -n](ss-n.bash)
+    - Листинг команды [ss -t](browser-ss-t.bash), [ss -n](ss-n.bash)
     - Порты в ожидании входящего трафика [ss -l](ss-l.bash)
     - UDP сокеты [ss -ua](ss-ua.bash)
     - Показать процесс использующий сокет [ss -p](ss-p.bash)
