@@ -57,7 +57,6 @@
     - Просмотр статистики по протоколу TCP [netstat -st](netstat-st.bash).
     - Листинг команды [ss -t](browser-ss-t.bash), [ss -n](ss-n.bash)
     - Порты в ожидании входящего трафика [ss -l](ss-l.bash)
-    - UDP сокеты [ss -ua](ss-ua.bash)
     - Показать процесс использующий сокет [ss -p](ss-p.bash)
     - Фильтр по Source-port: [ss -at sport = :22](ss-at-sport-22.bash)
     - Статистика [ss -s](ss-s.bash)
@@ -67,7 +66,8 @@
    **Ответ:**
    Для вывода списка сетевых соединений воспользуемся утилитами ` netstat ` и ` ss `.
    
-   - Вывод [netstat -ua](netstat-ua) показывает список соединений по UDP
+   - Список соединений по UDP [netstat -ua](netstat-ua)
+   - UDP сокеты [ss -ua](ss-ua.bash)
 
     По результатам диагностики состояний соединения зафиксированы протоколы:
     - ntp - Network Time Protocol, порт 123 UDP
