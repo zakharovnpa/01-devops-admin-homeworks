@@ -86,15 +86,24 @@
 
     **Ответ:**
     
-    Прмиеры настроек лежат в ОС Ubuntu Здесь: ` /usr/share/doc/ifenslave/examples `
+    Драйвер bonding ядра linux обеспечивает метод агрегации нескольких сетевых интерфейсов в единый логический bonded интерфейс. Поведение агрегированных 
+    ("bonded") интерфейсов зависит от режима ("mode"). 
+    Режимы обеспечивают либо балансировку нагрузки, либо горячий резерв. Кроме того, может быть обеспечен контроль целостности.
+
     
-    [two_hotplug_ethernet](two_hotplug_ethernet.bash)
+    Примеры настроек лежат в ОС Ubuntu Здесь: ` /usr/share/doc/ifenslave/examples `
     
     Конфигурация с двумя интерфейсами Ethernet (провод) с возможностью горячей замены:
+    [two_hotplug_ethernet](two_hotplug_ethernet.bash)
+    
+    Простая конфигурация с двумя Ethernet (проводными) интерфейсами.
     [two_ethernet](two_ethernet.bash)
     
-    [ethernet-wifi](ethernet_wifi.bash)
-    [ethernet-hotplug_wifi](ethernet_hotplug_wifi.bash)
+    Конфигурация с одним интерфейсом Ethernet (провод) и одним интерфейсом Wi-Fi:
+    [ethernet_wifi](ethernet_wifi.bash)
+    
+    Конфигурация с одним интерфейсом Ethernet и одним интерфейсом Wi-Fi с возможностью горячей замены:
+    [ethernet_hotplug_wifi](ethernet_hotplug_wifi.bash)
     
     
     ![12](/03-sysadmin-07-net/img/image12.png)
