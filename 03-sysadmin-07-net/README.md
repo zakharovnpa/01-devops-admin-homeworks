@@ -86,9 +86,13 @@
 
     **Ответ:**
     
+    Прмиеры настроек лежат в ОС Ubuntu Здесь: ` /usr/share/doc/ifenslave/examples `
     
     [two_hotplug_ethernet](two_hotplug_ethernet.bash)
+    
+    Конфигурация с двумя интерфейсами Ethernet (провод) с возможностью горячей замены:
     [two_ethernet](two_ethernet.bash)
+    
     [ethernet-wifi](ethernet-wifi.bash)
     [ethernet-hotplug_wifi](ethernet-hotplug_wifi.bash)
     
