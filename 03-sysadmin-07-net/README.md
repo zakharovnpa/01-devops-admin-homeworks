@@ -93,8 +93,8 @@
     Конфигурация с двумя интерфейсами Ethernet (провод) с возможностью горячей замены:
     [two_ethernet](two_ethernet.bash)
     
-    [ethernet-wifi](ethernet-wifi.bash)
-    [ethernet-hotplug_wifi](ethernet-hotplug_wifi.bash)
+    [ethernet-wifi](ethernet_wifi.bash)
+    [ethernet-hotplug_wifi](ethernet_hotplug_wifi.bash)
     
     
     ![12](/03-sysadmin-07-net/img/image12.png)
