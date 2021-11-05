@@ -92,7 +92,14 @@
  ("bonded") интерфейсов зависит от режима ("mode"). 
  Режимы обеспечивают либо балансировку нагрузки, либо горячий резерв. Кроме того, может быть обеспечен контроль целостности.
 
-[Выбор режима соединения MT для топологии с одним коммутатором](bonding-mode-selection.bash)
+[Выбор режима соединения увеличения пропускной способности для топологии с одним коммутатором](bonding-mode-selection.bash)
+- balance-rr
+- active-backup
+- balance-xor
+- broadcast
+- 802.3ad
+- balance-tlb
+- balance-alb
 
  [Выбор режима связывания высокой доступности для топологии с несколькими коммутаторами](bonding-mode.bash)
  
@@ -102,19 +109,17 @@
  
  [Сетевые настройки интерфейсов](network-configuration.bash)
  
- В ОС Ubuntu примеры настроек можно найти здесь: ` /usr/share/doc/ifenslave/examples `
+ * В ОС Ubuntu необходимо установить ifenslave. 
+ 
+   Примеры настроек можно найти здесь: ` /usr/share/doc/ifenslave/examples `
     
-Конфигурация с двумя интерфейсами Ethernet (провод) с возможностью горячей замены:
-[two_hotplug_ethernet](two_hotplug_ethernet.bash)
+   - [Конфигурация с двумя интерфейсами Ethernet с возможностью горячей замены](two_hotplug_ethernet.bash)
     
-Простая конфигурация с двумя Ethernet (проводными) интерфейсами.
-[two_ethernet](two_ethernet.bash)
+   - [Простая конфигурация с двумя Ethernet интерфейсами](two_ethernet.bash)
     
-Конфигурация с одним интерфейсом Ethernet (провод) и одним интерфейсом Wi-Fi:
-[ethernet_wifi](ethernet_wifi.bash)
+   - [Конфигурация с одним интерфейсом Ethernet и одним интерфейсом Wi-Fi](ethernet_wifi.bash)
     
-Конфигурация с одним интерфейсом Ethernet и одним интерфейсом Wi-Fi с возможностью горячей замены:
-[ethernet_hotplug_wifi](ethernet_hotplug_wifi.bash)
+   - [Конфигурация с одним интерфейсом Ethernet и одним интерфейсом Wi-Fi с возможностью горячей замены](ethernet_hotplug_wifi.bash)
     
     
  ![12](/03-sysadmin-07-net/img/image12.png)
