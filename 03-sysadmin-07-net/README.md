@@ -86,6 +86,13 @@
 
     **Ответ:**
     
+    
+    [two_hotplug_ethernet](two_hotplug_ethernet.bash)
+    [two_ethernet](two_ethernet.bash)
+    [ethernet-wifi](ethernet-wifi.bash)
+    [ethernet-hotplug_wifi](ethernet-hotplug_wifi.bash)
+    
+    
     ![12](/03-sysadmin-07-net/img/image12.png)
 	  
     ![13](/03-sysadmin-07-net/img/image13.png)
