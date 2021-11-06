@@ -94,7 +94,7 @@
 
 [Выбор режима соединения увеличения пропускной способности для топологии с одним коммутатором](bonding-mode-selection.bash)
 - Режим [balance-rr](balance-rr.bash), он же режим 0, обеспечивает балансировку нагрузки и отказоустойчивость.
-- Режим [active-backup]([active-backup.bash),  он же режим 1, 
+- Режим [active-backup](active-backup.bash),  он же режим 1, 
 - Режим [balance-xor](balance-xor.bash)
 - Режим [broadcast](broadcast.bash)
 - Режим [802.3ad](802.3ad.bash)
