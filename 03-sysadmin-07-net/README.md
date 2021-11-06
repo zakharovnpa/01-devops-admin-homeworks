@@ -102,8 +102,8 @@
 - Режим [balance-alb](balance-alb.bash)
 
  [Выбор режима связывания высокой доступности для топологии с несколькими коммутаторами](bonding-mode.bash)
- - active-backup
- - broadcast
+ - Режим [active-backup]([active-backup-2.bash)
+ - Режим [broadcast](broadcast-2.bash)
  
  [Увеличение пропускной способности в топологии с одним коммутатором](maximizing-throughput.bash)
  
