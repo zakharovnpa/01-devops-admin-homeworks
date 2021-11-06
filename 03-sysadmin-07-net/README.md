@@ -125,6 +125,8 @@
     
     Больше информации [здесь](https://wiki.debian.org/Bonding#Add_interfaces_to_the_bond.2Flag) и [здесь](https://www.kernel.org/doc/Documentation/networking/bonding.txt)
     
+  * [Конфигурирование агрегации интерфейсов](bonding-configuration.bash) 
+    
  ![12](/03-sysadmin-07-net/img/image12.png)
 	  
  ![13](/03-sysadmin-07-net/img/image13.png)
