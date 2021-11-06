@@ -94,12 +94,12 @@
 
 [Выбор режима соединения увеличения пропускной способности для топологии с одним коммутатором](bonding-mode-selection.bash)
 - Режим [balance-rr](balance-rr.bash)
-- active-backup
-- balance-xor
-- broadcast
-- 802.3ad
-- balance-tlb
-- balance-alb
+- Режим [active-backup]([active-backup.bash)
+- Режим [balance-xor](balance-xor.bash)
+- Режим [broadcast](broadcast.bash)
+- Режим [802.3ad](802.3ad.bash)
+- Режим [balance-tlb]([balance-tlb.bash)
+- Режим [balance-alb]balance-alb.bash
 
  [Выбор режима связывания высокой доступности для топологии с несколькими коммутаторами](bonding-mode.bash)
  - active-backup
@@ -123,6 +123,7 @@
     
    - [Конфигурация с одним интерфейсом Ethernet и одним интерфейсом Wi-Fi с возможностью горячей замены](ethernet_hotplug_wifi.bash)
     
+    Больше информации [здесь](https://wiki.debian.org/Bonding#Add_interfaces_to_the_bond.2Flag) и [здесь](https://www.kernel.org/doc/Documentation/networking/bonding.txt)
     
  ![12](/03-sysadmin-07-net/img/image12.png)
 	  
