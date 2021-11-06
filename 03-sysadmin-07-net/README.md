@@ -99,7 +99,7 @@
 - Режим [broadcast](broadcast.bash)
 - Режим [802.3ad](802.3ad.bash)
 - Режим [balance-tlb]([balance-tlb.bash)
-- Режим [balance-alb]balance-alb.bash
+- Режим [balance-alb](balance-alb.bash)
 
  [Выбор режима связывания высокой доступности для топологии с несколькими коммутаторами](bonding-mode.bash)
  - active-backup
