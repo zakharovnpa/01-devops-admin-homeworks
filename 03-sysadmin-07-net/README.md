@@ -125,7 +125,7 @@
     
    - [Конфигурация с одним интерфейсом Ethernet и одним интерфейсом Wi-Fi с возможностью горячей замены](ethernet_hotplug_wifi.bash)
     
-    Больше информации по Linux bonding [здесь](https://wiki.debian.org/Bonding#Add_interfaces_to_the_bond.2Flag) и [здесь](https://www.kernel.org/doc/Documentation/networking/bonding.txt), а также [здесь](http://samag.ru/archive/article/355)
+    Больше информации по Linux bonding [здесь](https://wiki.debian.org/Bonding#Add_interfaces_to_the_bond.2Flag) и [здесь](https://www.kernel.org/doc/Documentation/networking/bonding.txt), а также [здесь](http://samag.ru/archive/article/355) и [здесь](http://xgu.ru/wiki/Linux_Bonding)
     
   * [Конфигурирование агрегации интерфейсов](bonding-configuration.bash) 
     
