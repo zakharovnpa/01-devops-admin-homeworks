@@ -93,7 +93,7 @@
  Режимы обеспечивают либо балансировку нагрузки, либо горячий резерв. Кроме того, может быть обеспечен контроль целостности.
 
 [Выбор режима соединения увеличения пропускной способности для топологии с одним коммутатором](bonding-mode-selection.bash)
-- Режим [balance-rr](balance-rr.bash)
+- Режим [balance-rr](balance-rr.bash)обеспечивает балансировку нагрузки и отказоустойчивость.
 - Режим [active-backup]([active-backup.bash)
 - Режим [balance-xor](balance-xor.bash)
 - Режим [broadcast](broadcast.bash)
