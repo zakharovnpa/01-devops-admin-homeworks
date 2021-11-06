@@ -104,7 +104,7 @@
 - Режим [balance-alb](balance-alb.bash), он же режим 6. Адаптивная балансировка нагрузки: включает balance-tlb плюс балансировку нагрузки приема (rlb) для трафика IPV4 и не требует какой-либо специальной поддержки коммутатора.
 
  [Выбор режима связывания высокой доступности для топологии с несколькими коммутаторами](bonding-mode.bash)
- - Режим [active-backup]([active-backup-2.bash)
+ - Режим [active-backup](active-backup-2.bash)
  - Режим [broadcast](broadcast-2.bash)
  
  [Увеличение пропускной способности в топологии с одним коммутатором](maximizing-throughput.bash)
@@ -125,7 +125,7 @@
     
    - [Конфигурация с одним интерфейсом Ethernet и одним интерфейсом Wi-Fi с возможностью горячей замены](ethernet_hotplug_wifi.bash)
     
-    Больше информации [здесь](https://wiki.debian.org/Bonding#Add_interfaces_to_the_bond.2Flag) и [здесь](https://www.kernel.org/doc/Documentation/networking/bonding.txt)
+    Больше информации по Linux bonding [здесь](https://wiki.debian.org/Bonding#Add_interfaces_to_the_bond.2Flag) и [здесь](https://www.kernel.org/doc/Documentation/networking/bonding.txt)
     
   * [Конфигурирование агрегации интерфейсов](bonding-configuration.bash) 
     
