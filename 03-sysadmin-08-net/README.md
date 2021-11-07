@@ -23,23 +23,23 @@
    
    * Создание виртуального интерфейса:
      - Убедимся, что загружен модуль ядра dummy для настройки виртуальных интерфейсов. Создадим виртуальный интерфейс dummy0:
-       ![modeprobe-dummy](/03-sysadmin-08-net/img/image10.png)
+       ![modeprobe-dummy](/03-sysadmin-08-net/img/image10.PNG)
      - Пропишем в автозагрузку виртуальный интерфейс dummy0:
-       ![ip-link-add](/03-sysadmin-08-net/img/image11.png) 
+       ![ip-link-add](/03-sysadmin-08-net/img/image11.PNG) 
      - Добавим ip адрес интерфейсу dummy0 и проверим его доступность:
-     - ![ip-address-add](/03-sysadmin-08-net/img/image12.png)
+       ![ip-address-add](/03-sysadmin-08-net/img/image12.PNG)
      - Посмотрим статические маршруты в системе:
-     - ![ip-route-show](/03-sysadmin-08-net/img/image13.png)
+       ![ip-route-show](/03-sysadmin-08-net/img/image13.PNG)
      - Поднимем линк на интерфейсе dummy0:
-     - ![ip-link-set-up](/03-sysadmin-08-net/img/image14.png)
+       ![ip-link-set-up](/03-sysadmin-08-net/img/image14.PNG)
      - Добавим статические маршруты через dummy0 к сетям ` 10.2.2.0/24 `, ` 10.30.30.0/24 `, ` 10.40.40.0/24 `:
-     - ![ip-route-add](/03-sysadmin-08-net/img/image19.png)
+       ![ip-route-add](/03-sysadmin-08-net/img/image19.PNG)
 
    * Удаление виртуального интерфейса: 
      - Удалим статические маршруты через dummy0 к сетям ` 10.2.2.0/24 `, ` 10.30.30.0/24 `, ` 10.40.40.0/24 `:
-     - ![ip-route-delete](/03-sysadmin-08-net/img/image20.png)
+       ![ip-route-delete](/03-sysadmin-08-net/img/image20.PNG)
      - Удалим виртуальный интерфейс dummy0 и модуль dummy:
-     - ![ip-route-delete](/03-sysadmin-08-net/img/image18.png)
+       ![ip-route-delete](/03-sysadmin-08-net/img/image18.PNG)
  
 ### 3. Проверьте открытые TCP порты в Ubuntu, какие протоколы и приложения используют эти порты? Приведите несколько примеров.
  
