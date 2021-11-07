@@ -190,7 +190,7 @@
 * В Linux:
   - команда для просмотра таблицы arp - ` arp -e `
   - удаление только одного IP: ` arp -d <ip_addr> `
-  - удаление кеша полностью: ` ip neigh flush all `
+  - удаление кеша полностью: ` ip neigh flush all ` подробнее здесь [IPROUTE2 Utility Suite Howto](http://www.policyrouting.org/iproute2.doc.html#ss9.4.6)
 
 * В Windows:
   - команда для просмотра таблицы arp - ` arp -a `
