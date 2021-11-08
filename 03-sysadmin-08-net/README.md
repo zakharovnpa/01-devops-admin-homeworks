@@ -138,4 +138,10 @@
   - [Отказоустойчивый кластер с балансировкой нагрузки с помощью keepalived](https://habr.com/ru/post/524688/)
   - [Visualizing the Transition](https://www.digitalocean.com/community/tutorials/how-to-set-up-highly-available-haproxy-servers-with-keepalived-and-floating-ips-on-ubuntu-14-04#visualizing-the-transition)
   - [Как настроить высокодоступные HAProxy-серверы с Keepalived и плавающими IP-адресами в Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-highly-available-haproxy-servers-with-keepalived-and-floating-ips-on-ubuntu-14-04#visualizing-the-transition)
-  - 
+  - [Anycast против Unicast: что лучше выбирать в каждом случае](https://habr.com/ru/company/ruvds/blog/511050/)
+  - [BGP и BFD на Cisco](http://ciao-cacao.blogspot.com/2011/12/bgp-bfd.html)
+  - [Модульная сеть уровня 3 для Kubernetes: дизайн](https://blog.kintone.io/entry/neco/network-design)
+  - [BIRD Internet Routing Daemon](https://bird.network.cz/?get_doc&f=bird.html)
+  - [Постоянные статические маршруты в Linux](https://unix.stackexchange.com/questions/321687/what-is-the-best-way-to-add-a-permanent-route)
+  - [Public Route Servers](http://www.routeservers.org/)
+ 
