@@ -145,3 +145,12 @@
   - [Постоянные статические маршруты в Linux](https://unix.stackexchange.com/questions/321687/what-is-the-best-way-to-add-a-permanent-route)
   - [Public Route Servers](http://www.routeservers.org/)
  
+ ---
+ 
+ * Дополнительно:
+   - [dummy-интерфейс в Debian 10](https://klink0v.livejournal.com/559775.html)
+   - [Настройка виртуального интерфейса](https://qastack.ru/unix/152331/how-can-i-create-a-virtual-ethernet-interface-on-a-machine-without-a-physical-ad)
+   - [Task-centered iproute2 user guide](https://baturin.org/docs/iproute2/#ip-route-delete)
+   - [iproute2](https://en.wikipedia.org/wiki/Iproute2)
+   - [Создание и настройка виртуальных сетевых интерфейсов в Linux](http://rus-linux.net/MyLDP/lvs/virt_net.html)
+
