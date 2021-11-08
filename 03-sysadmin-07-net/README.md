@@ -117,7 +117,7 @@
  
    Примеры настроек можно найти здесь: ` /usr/share/doc/ifenslave/examples `, ` /usr/share/doc/ifenslave/README.Debian `.
    
-   [README.Debian](ifenslave-for-debian.bash)
+   - [README.Debian](ifenslave-for-debian.bash)
     
    - [Конфигурация с двумя интерфейсами Ethernet с возможностью горячей замены](two_hotplug_ethernet.bash)
     
