@@ -125,3 +125,10 @@
  
 
  ---
+Источники информации из лекции:
+[Guide to IP Layer Network Administration with Linux](http://linux-ip.net/html/index.html)
+[The TCP/IP Guide](http://www.tcpipguide.com/free/index.htm)
+[Примеры изображения схем Сети](https://linkmeup.gitbook.io/sdsm/0.-planirovanie/1.-shemi-seti)
+[Рисование диаграмм](https://app.diagrams.net/)
+[NetBox - инсталляция](https://netbox.readthedocs.io/en/stable/installation/)
+[Теория и практика DMVPN](https://linkmeup.gitbook.io/sdsm/7.-vpn/5.-dmvpn/0.-teoriya-i-praktika)
