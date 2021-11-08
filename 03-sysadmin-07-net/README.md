@@ -215,3 +215,17 @@
 Утилиты из лекции:
 
 ip - show / manipulate routing, network devices, interfaces and tunnels
+
+---
+
+* Источники информации из лекции:
+  - [Linux ip Command Examples](https://www.cyberciti.biz/faq/linux-ip-command-examples-usage-syntax/)
+  - [VLAN](http://xgu.ru/wiki/VLAN)
+  - [Switching > VLAN Trunking](http://help.sonicwall.com/help/sw/eng/published/1341040751_5.9.0/switching/l2vlan.htm)
+  - [VLAN в Ubuntu](http://xgu.ru/wiki/VLAN_%D0%B2_Ubuntu)
+  - [Bonding](https://wiki.debian.org/Bonding)
+  - [Агрегирование каналов](http://xgu.ru/wiki/%D0%90%D0%B3%D1%80%D0%B5%D0%B3%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B2)
+  - [Список подсетей специального назначения RFC 6890](https://ru.wikipedia.org/wiki/IPv4#%D0%9D%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE%D0%B4%D1%81%D0%B5%D1%82%D0%B5%D0%B9)
+  - [Сети для самых маленьких](https://linkmeup.gitbook.io/sdsm/)
+  - [Материалы, имеющие отношение к использованию сети на канальном уровне.](http://xgu.ru/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%83%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C)
+  - [Краткая справка по работе с утилитой ip](https://access.redhat.com/sites/default/files/attachments/rh_ip_command_cheatsheet_1214_jcs_print.pdf)
