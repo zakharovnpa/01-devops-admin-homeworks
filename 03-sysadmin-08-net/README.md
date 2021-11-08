@@ -132,3 +132,10 @@
   - [Рисование диаграмм](https://app.diagrams.net/)
   - [NetBox - инсталляция](https://netbox.readthedocs.io/en/stable/installation/)
   - [Теория и практика DMVPN](https://linkmeup.gitbook.io/sdsm/7.-vpn/5.-dmvpn/0.-teoriya-i-praktika)
+  - [Как настроить nginx в качестве балансировщика нагрузки](https://blog.listratenkov.com/kak-nastroit-nginx-v-kachestve-balansirovshhika-nagruzki/)
+  - [TCP Connection Establishment Process: The "Three-Way Handshake"](http://www.tcpipguide.com/free/t_TCPConnectionEstablishmentProcessTheThreeWayHandsh-3.htm)
+  - [TCP/IP Ports: Transport Layer (TCP/UDP) Addressing](http://www.tcpipguide.com/free/t_TCPIPPortsTransportLayerTCPUDPAddressing-2.htm)
+  - [Отказоустойчивый кластер с балансировкой нагрузки с помощью keepalived](https://habr.com/ru/post/524688/)
+  - [Visualizing the Transition](https://www.digitalocean.com/community/tutorials/how-to-set-up-highly-available-haproxy-servers-with-keepalived-and-floating-ips-on-ubuntu-14-04#visualizing-the-transition)
+  - [Как настроить высокодоступные HAProxy-серверы с Keepalived и плавающими IP-адресами в Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-highly-available-haproxy-servers-with-keepalived-and-floating-ips-on-ubuntu-14-04#visualizing-the-transition)
+  - 
