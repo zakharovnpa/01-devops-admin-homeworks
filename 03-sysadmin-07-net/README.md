@@ -113,7 +113,7 @@
  
  [Сетевые настройки интерфейсов](network-configuration.bash)
  
- * В ОС Ubuntu необходимо установить ifenslave. 
+ * В ОС Ubuntu необходимо установитьутилиту [ifenslave](ifenslave-for-debian.bash). 
  
    Примеры настроек можно найти здесь: ` /usr/share/doc/ifenslave/examples `
     
