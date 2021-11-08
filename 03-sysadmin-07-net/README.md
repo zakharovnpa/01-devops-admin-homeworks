@@ -229,3 +229,9 @@ ip - show / manipulate routing, network devices, interfaces and tunnels
   - [Сети для самых маленьких](https://linkmeup.gitbook.io/sdsm/)
   - [Материалы, имеющие отношение к использованию сети на канальном уровне.](http://xgu.ru/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%83%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C)
   - [Краткая справка по работе с утилитой ip](https://access.redhat.com/sites/default/files/attachments/rh_ip_command_cheatsheet_1214_jcs_print.pdf)
+
+---
+* Дополнительно:
+  - [Using vconfig to Create VLAN Devices](https://docs.oracle.com/cd/E37670_01/E41138/html/ch10s06s01.html)
+  - [Настройка VLAN интерфейсов в Linux](https://itproffi.ru/nastrojka-vlan-interfejsov-v-linux/)
+ 
