@@ -49,7 +49,7 @@
             date >> curl.log
         else exit
         fi
-    sleep 10
+        sleep 10
     done
 ```
 
@@ -73,5 +73,9 @@ let is a shell builtin
 
  type declare
 declare is a shell builtin
+
+type set
+set is a shell builtin
+
 
 
