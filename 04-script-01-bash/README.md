@@ -167,19 +167,15 @@ timeout=5
 #Если $? не равен нулю, то хост считается недоступным. Сделать записи о времени события и ip адресе хоста 
 #в файл логов и остановить выполнение скрипта
                         then
-                        date >>error_hosts.log && echo $h >>error_hosts.log && exit
-#Иначе если $? равен нулю, при этом хост считается доступными, то удалить информацию
-                        else
-                        echo $h  >/dev/null
-
+                        date >>error.log && echo $h >>error.log && exit
                         fi
                 done
 done
 ```
 
-Смотрим файл error_host.log
+Смотрим файл error.log
 ```bash
-root@vagrant:~/TMP# cat error_hosts.log
+root@vagrant:~/TMP# cat error.log
 Tue 09 Nov 2021 05:53:09 PM UTC
 141.8.192.238
 Tue 09 Nov 2021 05:55:19 PM UTC
