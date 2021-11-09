@@ -195,6 +195,7 @@ Tue 09 Nov 2021 05:55:27 PM UTC
 
 ---
 
+Утилиты из лекции:
 let
 let is a shell builtin
 
