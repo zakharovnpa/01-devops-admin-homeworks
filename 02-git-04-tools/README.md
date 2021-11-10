@@ -11,16 +11,34 @@
    * Полный хеш коммита - aefead2207ef7e2aa5dc81a34aedf0cad4c32545
    * Комментарий коммита:     Update CHANGELOG.md
 
+```bash
+$ git show aefead220
+commit aefead2207ef7e2aa5dc81a34aedf0cad4c32545
+Author: Alisdair McDiarmid <alisdair@users.noreply.github.com>
+Date:   Thu Jun 18 10:29:58 2020 -0400
+
+    Update CHANGELOG.md
+```
+
 ### 2. Какому тегу соответствует коммит `85024d3`?
 
    **Ответ:**
    * Коммит `85024d3` соответствует тегу v0.12.23
+
+```bash
+$ git show 85024d3
+commit 85024d3100126de36331c6982bfaac02cdab9e76 (tag: v0.12.23)
+```
    
 
 ### 3. Сколько родителей у коммита `b8d720`? Напишите их хеши.
 
    **Ответ:**
    У коммита ` b8d720 ` два родителя с хешами 56cd7859e05c36c06b56d013b55a252d0bb7e158 и 9ea88f22fc6269854151c571162c5bcf958bee2b
+```bash
+$ git show --pretty=format:' %P' b8d720
+ 56cd7859e05c36c06b56d013b55a252d0bb7e158 9ea88f22fc6269854151c571162c5bcf958bee2b
+```
 
 ### 4. Перечислите хеши и комментарии всех коммитов которые были сделаны между тегами  v0.12.23 и v0.12.24.
 
