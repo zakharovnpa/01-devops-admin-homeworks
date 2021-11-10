@@ -72,9 +72,47 @@ dd01a3507 Update CHANGELOG.md
 
    **Ответ:**
 
+* Найдено два коммита, в которых есть эта функция.
+  - В коммите 5af1e6234ab6da412fb8637393c5a17a1b293663 данную функцию первый раз добавил Мартин Аткинс 2 апреля 2020 года
+      
+```bash
+$ git log -S'func providerSource' --oneline
+5af1e6234 main: Honor explicit provider_installation CLI config when present
+8c928e835 main: Consult local directories as potential mirrors of providers
+maestro@mx-linux:~/PycharmProjects/devops-netology/terraform
+```
+
+```bash
+$ git show 8c928e835
+commit 8c928e83589d90a031f811fae52a81be7153e82f
+Author: Martin Atkins <mart@degeneration.co.uk>
+Date:   Thu Apr 2 18:04:39 2020 -0700
+```
+
+```bash
+$ git show 8c928e83589d90a031f811fae52a81be7153e82f | grep providerSource
++func providerSource(services *disco.Disco) getproviders.Source {
+```
+   - В коммите 5af1e6234ab6da412fb8637393c5a17a1b293663 Мартин Аткинс 21 апреля 2020 года изменил аргументы данной функции:
+
+```bash
+$ git show 5af1e6234
+commit 5af1e6234ab6da412fb8637393c5a17a1b293663 
+Author: Martin Atkins <mart@degeneration.co.uk>
+Date:   Tue Apr 21 16:28:59 2020 -0700
+```
+```bash
+$ git show 5af1e6234ab6da412fb8637393c5a17a1b293663 | grep providerSource
+-func providerSource(services *disco.Disco) getproviders.Source {
++func providerSource(configs []*cliconfig.ProviderInstallation, services *disco.Disco) (getproviders.Source, tfdiags.Diagnostics) {
++               source, moreDiags := providerSourceForCLIConfigLocation(sourceConfig.Location, services)
+```
+
 ### 6. Найдите все коммиты в которых была изменена функция `globalPluginDirs`.
 
    **Ответ:**
+   
+   
 
 ### 7. Кто автор функции `synchronizedWriters`? 
 
