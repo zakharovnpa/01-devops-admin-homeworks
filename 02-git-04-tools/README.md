@@ -8,8 +8,8 @@
 ### 1. Найдите полный хеш и комментарий коммита, хеш которого начинается на `aefea`.
 
    **Ответ:**
-   * Полный хеш коммита - aefead2207ef7e2aa5dc81a34aedf0cad4c32545
-   * Комментарий коммита:     Update CHANGELOG.md
+   * Полный хеш коммита - ` aefead2207ef7e2aa5dc81a34aedf0cad4c32545 `
+   * Комментарий коммита:     ` Update CHANGELOG.md `
 
 ```bash
 $ git show aefead220
@@ -23,7 +23,7 @@ Date:   Thu Jun 18 10:29:58 2020 -0400
 ### 2. Какому тегу соответствует коммит `85024d3`?
 
    **Ответ:**
-   * Коммит `85024d3` соответствует тегу v0.12.23
+   * Коммит ` 85024d3 ` соответствует тегу ` v0.12.23 `
 
 ```bash
 $ git show 85024d3
@@ -34,7 +34,7 @@ commit 85024d3100126de36331c6982bfaac02cdab9e76 (tag: v0.12.23)
 ### 3. Сколько родителей у коммита `b8d720`? Напишите их хеши.
 
    **Ответ:**
-   У коммита ` b8d720 ` два родителя с хешами 56cd7859e05c36c06b56d013b55a252d0bb7e158 и 9ea88f22fc6269854151c571162c5bcf958bee2b
+   У коммита ` b8d720 ` два родителя с хешами ` 56cd7859e05c36c06b56d013b55a252d0bb7e158 ` и ` 9ea88f22fc6269854151c571162c5bcf958bee2b `
 ```bash
 $ git show --pretty=format:' %P' b8d720
  56cd7859e05c36c06b56d013b55a252d0bb7e158 9ea88f22fc6269854151c571162c5bcf958bee2b
@@ -73,7 +73,7 @@ dd01a3507 Update CHANGELOG.md
    **Ответ:**
 
 * Найдено два коммита, в которых есть эта функция.
-  - В коммите 5af1e6234ab6da412fb8637393c5a17a1b293663 данную функцию первый раз добавил Мартин Аткинс 2 апреля 2020 года
+  - В коммите ` 5af1e6234ab6da412fb8637393c5a17a1b293663 ` данную функцию первый раз добавил Мартин Аткинс 2 апреля 2020 года
       
 ```bash
 $ git log -S'func providerSource' --oneline
@@ -93,7 +93,7 @@ Date:   Thu Apr 2 18:04:39 2020 -0700
 $ git show 8c928e83589d90a031f811fae52a81be7153e82f | grep providerSource
 +func providerSource(services *disco.Disco) getproviders.Source {
 ```
-   - В коммите 5af1e6234ab6da412fb8637393c5a17a1b293663 Мартин Аткинс 21 апреля 2020 года изменил аргументы данной функции:
+   - В коммите ` 5af1e6234ab6da412fb8637393c5a17a1b293663 ` Мартин Аткинс 21 апреля 2020 года изменил аргументы данной функции:
 
 ```bash
 $ git show 5af1e6234
@@ -112,6 +112,30 @@ $ git show 5af1e6234ab6da412fb8637393c5a17a1b293663 | grep providerSource
 
    **Ответ:**
    
+   Найден только один коммит ` 8364383c3 `, в котором данная функция была изменена. В других коммитах функция не менялась 
+   
+```bash
+   $ git log -S'globalPluginDirs' --oneline
+35a058fb3 main: configure credentials from the CLI config file
+c0b176109 prevent log output during init
+8364383c3 Push plugin discovery down into command package
+```
+   * В коммите ` 8364383c3 ` функция добавлена:
+```bash
+$ git show 8364383c3 | grep globalPluginDirs
++func globalPluginDirs() []string {
+```
+   * В коммите ` c0b176109 ` функция упоминается в комментарии:
+```bash
+$ git show c0b176109 | grep globalPluginDirs
++               // FIXME: homeDir gets called from globalPluginDirs during init, before
+```
+
+   * В коммите ` 35a058fb3 ` функция участвует как аргумент в другой функции:
+```bash
+$ git show 35a058fb3 | grep globalPluginDirs
++               available := pluginDiscovery.FindPlugins("credentials", globalPluginDirs())
+   ```
    
 
 ### 7. Кто автор функции `synchronizedWriters`? 
