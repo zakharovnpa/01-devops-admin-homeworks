@@ -117,13 +117,22 @@ $ git show 5af1e6234ab6da412fb8637393c5a17a1b293663 | grep providerSource
 ### 7. Кто автор функции `synchronizedWriters`? 
 
    **Ответ:**
-   Автор функции - Martin Atkins. Он ввел эту функцию раньше, чем James Bardin.
+   Автор функции - Martin Atkins. Он ввел эту функцию 3 мая 2020 года. 
 
 ```bash
    $ git log -S'func synchronizedWriters' --pretty=format:'%h - %an %ae'
 bdfea50cc - James Bardin j.bardin@gmail.com
 5ac311e2a - Martin Atkins mart@degeneration.co.uk
 ```
-
+```bash
+$ git show 5ac311e2a
+commit 5ac311e2a91e381e2f52234668b49ba670aa0fe5
+Author: Martin Atkins <mart@degeneration.co.uk>
+Date:   Wed May 3 16:25:41 2017 -0700
+```
+```bash
+$ git show 5ac311e2a | grep synchronizedWriters
++func synchronizedWriters(targets ...io.Writer) []io.Writer {
+```
 ---
 
