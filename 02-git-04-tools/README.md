@@ -64,5 +64,13 @@ $ git log --oneline --graph b8d720
 ### 7. Кто автор функции `synchronizedWriters`? 
 
    **Ответ:**
+   Автор функции - Martin Atkins. Он ввел эту функцию раньше, чем James Bardin.
+
+```bash
+   $ git log -S'func synchronizedWriters' --pretty=format:'%h - %an %ae'
+bdfea50cc - James Bardin j.bardin@gmail.com
+5ac311e2a - Martin Atkins mart@degeneration.co.uk
+```
+
 ---
 
