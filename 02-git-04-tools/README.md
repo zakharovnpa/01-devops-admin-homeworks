@@ -39,6 +39,15 @@ commit 85024d3100126de36331c6982bfaac02cdab9e76 (tag: v0.12.23)
 $ git show --pretty=format:' %P' b8d720
  56cd7859e05c36c06b56d013b55a252d0bb7e158 9ea88f22fc6269854151c571162c5bcf958bee2b
 ```
+```bash
+$ git log --oneline --graph b8d720
+*   b8d720f83 Merge pull request #23916 from hashicorp/cgriggs01-stable
+|\
+| * 9ea88f22f add/update community provider listings
+|/
+*   56cd7859e Merge pull request #23857 from hashicorp/cgriggs01-stable
+
+```
 
 ### 4. Перечислите хеши и комментарии всех коммитов которые были сделаны между тегами  v0.12.23 и v0.12.24.
 
