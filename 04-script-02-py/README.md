@@ -126,7 +126,7 @@ root@PC-Ubuntu:~/scripts# ./test-3-ex-2.py
  В скрипт добавлена возможность принимать входящие аргументы (модуль ` import sys `)
  * Измененный скрипт ` ex-3.py `
  ```python
- #!/usr/bin/env python3
+#!/usr/bin/env python3
 
 import os
 import sys
@@ -134,45 +134,47 @@ import sys
 cmd = sys.argv[1]
 bash_command = ["cd "+cmd, "git status"]
 result_os = os.popen(' && '.join(bash_command)).read()
+
 for result in result_os.split('\n'):
     if result.find('изменено') != -1:
-        prepare_result = result.replace('\tизменено: ', '')
+        prepare_result = result.replace('\tизменено: ', '/')
+        prepare_result = prepare_result.replace(' ', '')
         print(cmd+prepare_result)
 
  ```
  * Результат выполнения скрипта  ` ex-3.py `
  ```bash
 root@PC-Ubuntu:~/scripts# ./ex-3.py ~/netology-project/virt-homeworks-1
-/root/netology-project/virt-homeworks-1     05-virt-01-basics/README.md
-/root/netology-project/virt-homeworks-1     05-virt-02-iaac/README.md
-/root/netology-project/virt-homeworks-1     05-virt-03-docker/README.md
-/root/netology-project/virt-homeworks-1     05-virt-04-docker-compose/README.md
-/root/netology-project/virt-homeworks-1     05-virt-05-docker-swarm/README.md
+/root/netology-project/virt-homeworks-1/05-virt-01-basics/README.md
+/root/netology-project/virt-homeworks-1/05-virt-02-iaac/README.md
+/root/netology-project/virt-homeworks-1/05-virt-03-docker/README.md
+/root/netology-project/virt-homeworks-1/05-virt-04-docker-compose/README.md
+/root/netology-project/virt-homeworks-1/05-virt-05-docker-swarm/README.md
 ```
 * результат работы скрипта в директории, где не активирован Git
 ```bash
-root@PC-Ubuntu:~/scripts# ./ex-3.py ~/netology-project
-
- Каталог  /root/netology-project не является GIT репозиторием
+root@PC-Ubuntu:~/scripts# ./ex-3.py ~/netology-project/
+fatal: не найден git репозиторий (или один из родительских каталогов): .git
 
  ```
 
 #### 4. Наша команда разрабатывает несколько веб-сервисов, доступных по http. Мы точно знаем, что на их стенде нет никакой балансировки, кластеризации, за DNS прячется конкретный IP сервера, где установлен сервис. Проблема в том, что отдел, занимающийся нашей инфраструктурой очень часто меняет нам сервера, поэтому IP меняются примерно раз в неделю, при этом сервисы сохраняют за собой DNS имена. Это бы совсем никого не беспокоило, если бы несколько раз сервера не уезжали в такой сегмент сети нашей компании, который недоступен для разработчиков. Мы хотим написать скрипт, который опрашивает веб-сервисы, получает их IP, выводит информацию в стандартный вывод в виде: <URL сервиса> - <его IP>. Также, должна быть реализована возможность проверки текущего IP сервиса c его IP из предыдущей проверки. Если проверка будет провалена - оповестить об этом в стандартный вывод сообщением: [ERROR] <URL сервиса> IP mismatch: <старый IP> <Новый IP>. Будем считать, что наша разработка реализовала сервисы: drive.google.com, mail.google.com, google.com.
 
-Наша команда разрабатывает несколько веб-сервисов, доступных по http. 
-Мы точно знаем, что на их стенде нет никакой балансировки, кластеризации, за DNS прячется конкретный IP сервера, где установлен сервис. 
-
-Проблема в том, что отдел, занимающийся нашей инфраструктурой очень часто меняет нам сервера, поэтому IP меняются примерно раз в неделю, при этом сервисы сохраняют за собой DNS имена. Это бы совсем никого не беспокоило, если бы несколько раз сервера не уезжали в такой сегмент сети нашей компании, который недоступен для разработчиков. 
-
-Мы хотим написать скрипт, который:
-- опрашивает веб-сервисы, 
-- получает их IP, 
-- выводит информацию в стандартный вывод в виде: <URL сервиса> - <его IP>. 
-- должна быть реализована возможность проверки текущего IP сервиса c его IP из предыдущей проверки. Если проверка будет провалена - оповестить об этом в стандартный вывод сообщением: [ERROR] <URL сервиса> IP mismatch: <старый IP> <Новый IP>. 
-
 Будем считать, что наша разработка реализовала сервисы: drive.google.com, mail.google.com, google.com.
 
    **Ответ:**
+   
+Итак, нам необходимо написать скрипт, который:
+- опрашивает веб-сервисы drive.google.com, mail.google.com, google.com и получает их IP
+- выводит информацию в стандартный вывод в виде: <URL сервиса> - <его IP>
+- проверяет текущий IP сервиса c его IP из предыдущей проверки
+- если текущий IP сервиса c предыдущим его IP не совпадает - оповестить об этом в стандартный вывод сообщением: 
+  - [ERROR] <URL сервиса> IP mismatch: <старый IP> <Новый IP>. 
+
+
+
+
+
 
 #### Дополнительное задание (со звездочкой*) - необязательно к выполнению
 
