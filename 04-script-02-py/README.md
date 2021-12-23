@@ -85,32 +85,37 @@
 - добавлен в вывод результатов путь до директории, где запускается команда ` git status `
 - удалены лишние пробелы
 
-* Измененный скрипт ` test-3-ex-2.py `
+* Измененный скрипт ` ex-2.py `
 ```python
 #!/usr/bin/env python3
 
+# Скрипт проверки измененных файлов в локальной директории
+
+# Импортируем модуль
 import os
     
-bashCommand = ["cd ~/netology-project/virt-homeworks-1", "git status"]
-result_os = os.popen(' && '.join(bashCommand)).read()
+bashCommand = ["cd ~/netology-project/virt-homeworks-1", "git status"]	# команды, выполняемые в целевой директории
+result_os = os.popen(' && '.join(bashCommand)).read()			# чтение
 
-for result in result_os.split('\n'):
-    if result.find('изменено') != -1:
+for result in result_os.split('\n'):		# выполнить разделение
+    if result.find('изменено') != -1:		# условие, если результаты вывода команд соответствуют знчению поиска
     
 #is_change = False	#удалили неработающую переменную
 
-        prepare_result = result.replace('\tизменено:   ', '')
+        prepare_result = result.replace('\tизменено:   ', '')	# перезаписать с добавлением знаков
         prepare_result = result.replace('\tизменено:', '/root/netology-project/virt-homeworks-1/')  #внесли путь до директории
         prepare_result = prepare_result.replace(' ', '')	#удаляем лишние пробелы
-        print(prepare_result)
+        print(prepare_result)					# вывести результат на экран
 	
 # break		#удалили останавливающую цикл команду
 
+# The END
+
 ```
-* Результат выполнения скрипта  ` test-3-ex-2.py `
+* Результат выполнения скрипта  ` ex-2.py `
 
 ```bash
-root@PC-Ubuntu:~/scripts# ./test-3-ex-2.py 
+root@PC-Ubuntu:~/scripts# ./ex-2.py 
 /root/netology-project/virt-homeworks-1/05-virt-01-basics/README.md
 /root/netology-project/virt-homeworks-1/05-virt-02-iaac/README.md
 /root/netology-project/virt-homeworks-1/05-virt-03-docker/README.md
@@ -128,19 +133,23 @@ root@PC-Ubuntu:~/scripts# ./test-3-ex-2.py
  ```python
 #!/usr/bin/env python3
 
+# Скрипт с вводом аргументов для проверки измененных файлов в локальной директории
+
+# Импортируем модули
 import os
 import sys
 
-cmd = sys.argv[1]
-bash_command = ["cd "+cmd, "git status"]
-result_os = os.popen(' && '.join(bash_command)).read()
+cmd = sys.argv[1]		# переменная для приема аргументов из командной строки
+bash_command = ["cd "+cmd, "git status"]	# команды, выполняемые в целевой директории
+result_os = os.popen(' && '.join(bash_command)).read()	# чтение
 
-for result in result_os.split('\n'):
-    if result.find('изменено') != -1:
-        prepare_result = result.replace('\tизменено: ', '/')
-        prepare_result = prepare_result.replace(' ', '')
-        print(cmd+prepare_result)
+for result in result_os.split('\n'):	# выполнить разделение
+    if result.find('изменено') != -1:	# условие, если результаты вывода команд соответствуют знчению поиска
+        prepare_result = result.replace('\tизменено: ', '/')	# перезаписать с добавлением знаков
+        prepare_result = prepare_result.replace(' ', '')  # перезаписать с удалением пробелов
+        print(cmd+prepare_result)			  # вывести результат на экран
 
+# The END
  ```
  * Результат выполнения скрипта  ` ex-3.py `
  ```bash
@@ -180,13 +189,100 @@ fatal: не найден git репозиторий (или один из род
 >>> socket.gethostbyname('google.com')
 '173.194.73.100'
 ```
-Для тестирования группы серверов создадим упорядоченный редактируемый массив и создадим цикл опроса элементов массива методом ` socket.gethostbyname `.
+
+* Текст скрипта:
 ```python
-sites = {'drive.google.com' , 'mail.google.com' , 'google.com'}
+#!/usr/bin/env python3
+
+# Скрипт для фиксации момента изменения IP адреса сервиса
+
+# Импортируем модули
+import socket 
+import time
+import datetime
+
+# Переменные с актуальными IP адресами сервисов на момент начала проверки
+f = socket.gethostbyname('google.com')
+g = socket.gethostbyname('drive.google.com')
+h = socket.gethostbyname('mail.google.com')
+
+# Массив для вывода результатов на экран
+server = ['     - google.com - '+f, '     - mail.google.com - '+h, '     - drive.google.com - '+g]
+
+#Блок вывода результатов на экран
+print('---    Актуальные сейчас IP адреса сервисов:')
+print(server[0])
+print(server[1])
+print(server[2])
+print('Смены IP адресов:')
+
+
+# Массив для работы в цикле проверок
+service = {'google.com':f, 'mail.google.com':h, 'drive.google.com':g}
+
+# Переменные для работы цикла
+i = 1              # Начальное значение переменной
+waiting = 2        # интервал запуска тестов в секундах
+init=0             # Значение для сброса счетчика итераций
+
+#Блок цикла
+while 1==1 :                    # бесконечное число проверок 
+  for host in service:          # условие для каждого элемента (host )в массиве (service) 
+    ip = socket.gethostbyname(host)     # получение ip адреса по имени хоста
+    if ip != service[host]:    # сравнение полученного на предыдущем шаге ip адреса с адресом на начало проверки 
+      if i==1 and init !=1:    # проверка условий для счетчиков
+
+        # Строка, формирующая таблицу значений результатов проверок
+        print(str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")) +' [ERROR] ' + str(host) +' IP mistmatch: '+service[host]+' '+ip)
+      
+      service[host]=ip    # запись нового полученного ip адреса в массив
+
+  time.sleep(waiting)     # таймер паузы в проверках
+
+# The END
+
 ```
+* Результаты работы скрипта:
+```yml
+root@PC-Ubuntu:~/scripts# ./ex-4.py 
+---    Актуальные сейчас IP адреса сервисов:
+     - google.com - 173.194.73.100
+     - mail.google.com - 209.85.233.19
+     - drive.google.com - 173.194.222.194
+Смены IP адресов:
+2021-12-23 06:01:28 [ERROR] google.com IP mistmatch: 173.194.73.100 173.194.73.101
+2021-12-23 06:23:37 [ERROR] google.com IP mistmatch: 173.194.73.101 173.194.73.102
+2021-12-23 06:29:32 [ERROR] drive.google.com IP mistmatch: 173.194.222.194 108.177.14.194
+2021-12-23 06:33:59 [ERROR] drive.google.com IP mistmatch: 108.177.14.194 173.194.222.194
+2021-12-23 06:34:15 [ERROR] mail.google.com IP mistmatch: 209.85.233.19 209.85.233.83
+2021-12-23 07:07:52 [ERROR] drive.google.com IP mistmatch: 173.194.222.194 108.177.14.194
+2021-12-23 07:23:39 [ERROR] google.com IP mistmatch: 173.194.73.102 64.233.165.102
+2021-12-23 07:29:07 [ERROR] drive.google.com IP mistmatch: 108.177.14.194 173.194.222.194
+2021-12-23 07:34:16 [ERROR] mail.google.com IP mistmatch: 209.85.233.83 209.85.233.18
+2021-12-23 07:34:18 [ERROR] mail.google.com IP mistmatch: 209.85.233.18 209.85.233.17
+2021-12-23 07:36:00 [ERROR] drive.google.com IP mistmatch: 173.194.222.194 108.177.14.194
+2021-12-23 07:46:16 [ERROR] google.com IP mistmatch: 64.233.165.102 173.194.73.100
+2021-12-23 08:01:30 [ERROR] mail.google.com IP mistmatch: 209.85.233.17 209.85.233.18
+2021-12-23 08:03:12 [ERROR] drive.google.com IP mistmatch: 108.177.14.194 173.194.222.194
+2021-12-23 08:23:39 [ERROR] google.com IP mistmatch: 173.194.73.100 173.194.73.102
+2021-12-23 08:23:41 [ERROR] google.com IP mistmatch: 173.194.73.102 173.194.73.101
+2021-12-23 08:34:16 [ERROR] mail.google.com IP mistmatch: 209.85.233.18 142.251.1.83
+2021-12-23 09:18:57 [ERROR] mail.google.com IP mistmatch: 142.251.1.83 209.85.233.19
+2021-12-23 09:18:59 [ERROR] mail.google.com IP mistmatch: 209.85.233.19 209.85.233.18
+2021-12-23 09:23:39 [ERROR] google.com IP mistmatch: 173.194.73.101 173.194.73.139
+2021-12-23 09:23:41 [ERROR] google.com IP mistmatch: 173.194.73.139 173.194.73.100
+2021-12-23 09:34:21 [ERROR] mail.google.com IP mistmatch: 209.85.233.18 142.251.1.18
+2021-12-23 09:34:23 [ERROR] mail.google.com IP mistmatch: 142.251.1.18 142.251.1.19
+2021-12-23 10:01:30 [ERROR] mail.google.com IP mistmatch: 142.251.1.19 209.85.233.19
+2021-12-23 10:23:42 [ERROR] google.com IP mistmatch: 173.194.73.100 173.194.73.113
+2021-12-23 10:23:44 [ERROR] google.com IP mistmatch: 173.194.73.113 173.194.73.138
+2021-12-23 10:34:23 [ERROR] mail.google.com IP mistmatch: 209.85.233.19 209.85.233.18
+2021-12-23 11:08:38 [ERROR] drive.google.com IP mistmatch: 173.194.222.194 108.177.14.194
+2021-12-23 11:23:42 [ERROR] google.com IP mistmatch: 173.194.73.138 173.194.73.101
+2021-12-23 11:23:44 [ERROR] google.com IP mistmatch: 173.194.73.101 173.194.73.102
 
 
-
+```
 
 
 
@@ -194,19 +290,8 @@ sites = {'drive.google.com' , 'mail.google.com' , 'google.com'}
 
 Так получилось, что мы очень часто вносим правки в конфигурацию своей системы прямо на сервере. Но так как вся наша команда разработки держит файлы конфигурации в github и пользуется gitflow, то нам приходится каждый раз переносить архив с нашими изменениями с сервера на наш локальный компьютер, формировать новую ветку, коммитить в неё изменения, создавать pull request (PR) и только после выполнения Merge мы наконец можем официально подтвердить, что новая конфигурация применена. Мы хотим максимально автоматизировать всю цепочку действий. Для этого нам нужно написать скрипт, который будет в директории с локальным репозиторием обращаться по API к github, создавать PR для вливания текущей выбранной ветки в master с сообщением, которое мы вписываем в первый параметр при обращении к py-файлу (сообщение не может быть пустым). При желании, можно добавить к указанному функционалу создание новой ветки, commit и push в неё изменений конфигурации. С директорией локального репозитория можно делать всё, что угодно. Также, принимаем во внимание, что Merge Conflict у нас отсутствуют и их точно не будет при push, как в свою ветку, так и при слиянии в master. Важно получить конечный результат с созданным PR, в котором применяются наши изменения. 
 
-**Ответ:**
+**Ответ:** Задача не решена, т.к. она не соответствует моему уровню знаний Python.
 
-Комментарий по заданию дан в лекции на 1 час 48 минут 13 сек. от начала
-
-Так получилось, что мы очень часто вносим правки в конфигурацию своей системы прямо на сервере. Но так как вся наша команда разработки держит файлы конфигурации в github и пользуется gitflow, то нам приходится каждый раз переносить архив с нашими изменениями с сервера на наш локальный компьютер, формировать новую ветку, коммитить в неё изменения, создавать pull request (PR) и только после выполнения Merge мы наконец можем официально подтвердить, что новая конфигурация применена. Мы хотим максимально автоматизировать всю цепочку действий. 
-
-Для этого нам нужно написать скрипт, который будет:
-- в директории с локальным репозиторием обращаться по API к github, 
-- создавать pull request (PR) для вливания текущей выбранной ветки в master с сообщением, которое мы вписываем в первый параметр при обращении к py-файлу (сообщение не может быть пустым). 
-- При желании, можно добавить к указанному функционалу создание новой ветки, commit и push в неё изменений конфигурации. 
-- С директорией локального репозитория можно делать всё, что угодно. 
-- Также, принимаем во внимание, что Merge Conflict у нас отсутствуют и их точно не будет при push, как в свою ветку, так и при слиянии в master. 
-- Важно получить конечный результат с созданным PR, в котором применяются наши изменения. 
 
 ---
 
