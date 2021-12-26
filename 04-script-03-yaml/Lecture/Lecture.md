@@ -326,12 +326,26 @@ version: 3
 root@PC-Ubuntu:~/scripts/Lecture# 
 
 ```
-* 9 На 59:25
+* 9 На 59:25преобразования из формата json в yaml
 ```python
+>>>with open('2.json', 'r') as js:
+... yaml_2 = yaml.safe_load(js)
+...
+>>>yaml_2
+>>>{'examples': [{'anoser_key': 23, 'link': [None, 'localhost:323']}, {'anoser_key': 22, 'link':[]}], 'key': '43' , 'pages': [1, 2, 3, 4, 5], 'some_new': 'Aleksey')
 
 ```
-
-
+* 10 На 1:00:24 попытка проеобразовать файл yaml в json. Ошибка декодера.
+```python
+>>>with open("2.yml", "r") as js:
+... json_2 = json.load(js)
+...
+>>>
+.
+.
+raise JsonDecoderError(expecting_value, s, err.value)
+```
+* 11 На 1:02:55 тема про преобразования
 
 ### 24Итоги
 Сегодня мы:
@@ -339,7 +353,9 @@ root@PC-Ubuntu:~/scripts/Lecture#
 ● познакомились с синтаксисами языков JSON и YAML;
 ● познакомились с возможностью их обработки при
 помощи Python
-### 25Домашнее задание
+
+
+### 25Домашнее задание. На 1:03:20 разбор ДЗ
 Давайте посмотрим ваше домашнее задание.
 ● Вопросы по домашней работе задавайте в чате мессенджера
 Slack.
