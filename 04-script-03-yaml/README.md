@@ -4,11 +4,11 @@
 
 #### 1. Мы выгрузили JSON, который получили через API запрос к нашему сервису:
 ```json
-    { "info" : "Sample JSON output from our service\t",
+    { "info" : "Sample JSON output from our service\t",        # Экранированный знак горизонтального таба "\t"здесь лишний, он отделяет ковычки
         "elements" :[
             { "name" : "first",
             "type" : "server",
-            "ip" : 7175         # здесь неверный формат записи IP адреса в поле значения ключа
+            "ip" : 7175         # здесь неверный формат записи IP адреса в поле значения ключа и нет двойных ковычек в поле значения ключа
             },
             { "name" : "second",
             "type" : "proxy",
@@ -24,7 +24,7 @@
 ```json
 # Удалены лишние пробелы перед двоеточиями и после фигурных скобок
 
-    {"info": "Sample JSON output from our service\t",
+    {"info": "Sample JSON output from our service",
         "elements": [
             {"name": "first",
               "type": "server",
