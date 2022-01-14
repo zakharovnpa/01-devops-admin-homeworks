@@ -2,7 +2,7 @@
 
 ---
 * Ответы на задания даны после каждого из них.
-* Общий ход выполнения ДЗ можно посмотреть [здесь](https://github.com/zakharovnpa/01-devops-admin-homeworks/edit/main/02-git-03-branching/Lesson/Lesson.md)
+* Общий ход выполнения ДЗ можно посмотреть [здесь](https://github.com/zakharovnpa/01-devops-admin-homeworks/blob/main/02-git-03-branching/Lesson/Lesson.md)
 * Репозиторий с выполненным ДЗ [здесь](https://github.com/zakharovnpa/branching-git/tree/master)
 
 ---
