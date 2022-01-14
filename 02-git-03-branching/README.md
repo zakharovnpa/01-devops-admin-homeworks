@@ -939,6 +939,18 @@ Fast-forward
  branching/rebase.sh | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
+```sh
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git log --graph --oneline
+* 0ec339f (HEAD -> master, git-rebase) git-rebase 2
+*   3e96331 Merge branch 'git-merge'
+|\  
+| * 33e704b (git-merge) merge: use shift
+| * 371a772 merge: @ instead *
+* | e170b34 noname commit - cheange main
+|/  
+* e12ef31 prepare for merge and rebase
+
+```
 Получалась такая схема веток ![End-network-graph](/02-git-03-branching/Lesson/img/End-network-graph.png)
 
 
