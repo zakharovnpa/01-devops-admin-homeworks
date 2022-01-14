@@ -1,5 +1,5 @@
 ## Ход выполнения задания
-
+```ps
 maestro@PC-Ubuntu:~/Рабочий стол$ sudo -i
 [sudo] пароль для maestro: 
 root@PC-Ubuntu:~# 
@@ -1139,3 +1139,4 @@ root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# А пер�
 А: команда не найдена
 root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
 root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+```
