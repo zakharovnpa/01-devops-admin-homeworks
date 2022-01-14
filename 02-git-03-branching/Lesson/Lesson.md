@@ -1141,3 +1141,280 @@ root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching#
 root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
 ```
 Получалась такая схема веток ![Network-Graph](/02-git-03-branching/Lesson/img/Network-Graph.png)
+```ps
+maestro@PC-Ubuntu:~/Рабочий стол$ sudo-i
+sudo-i: команда не найдена
+maestro@PC-Ubuntu:~/Рабочий стол$ 
+maestro@PC-Ubuntu:~/Рабочий стол$ sudo -i
+[sudo] пароль для maestro: 
+root@PC-Ubuntu:~# 
+root@PC-Ubuntu:~# cd netology-project/
+root@PC-Ubuntu:~/netology-project# 
+root@PC-Ubuntu:~/netology-project# ls -l
+итого 44
+drwxr-xr-x  3 root root 4096 янв 13 17:27 01-devops-admin
+drwxr-xr-x  3 root root 4096 дек  9 15:48 02-virt-admin
+drwxr-xr-x 14 root root 4096 дек 20 18:53 2-virt-admin
+drwxr-xr-x  4 root root 4096 янв  3 19:23 brikman
+drwxr-xr-x  3 root root 4096 дек 20 16:15 devops-terraform
+drwxr-xr-x  4 root root 4096 дек  9 15:54 Docker-Compose
+drwxr-xr-x  3 root root 4096 дек 15 22:27 Docker-Compose-Hard
+drwxr-xr-x  3 root root 4096 дек 11 09:16 Docker-Compose-Swarm
+drwxr-xr-x  4 root root 4096 дек 21 17:39 learning-terraform
+drwxr-xr-x  4 root root 4096 дек 20 17:51 terraform-02-syntax
+drwxr-xr-x 21 root root 4096 дек 11 09:03 virt-homeworks-1
+root@PC-Ubuntu:~/netology-project# 
+root@PC-Ubuntu:~/netology-project# 
+root@PC-Ubuntu:~/netology-project# cd 01-devops-admin/
+root@PC-Ubuntu:~/netology-project/01-devops-admin# 
+root@PC-Ubuntu:~/netology-project/01-devops-admin# ls -l
+итого 0
+root@PC-Ubuntu:~/netology-project/01-devops-admin# cd
+root@PC-Ubuntu:~# 
+root@PC-Ubuntu:~# ls -l
+итого 58904
+drwxr-xr-x  3 root    root        4096 янв 13 17:30  devops-netology
+drwxr-xr-x  3 root    root        4096 янв 13 22:39  go
+drwxr-xr-x  2 root    root        4096 дек 23 11:36  log
+-rw-rw-r--  1 maestro maestro     1700 янв  5 12:21  my-key.pem
+drwxr-xr-x 13 root    root        4096 янв 13 17:26  netology-project
+drwxr-xr-x  3 root    root        4096 янв 13 21:40  PycharmProjects
+drwxr-xr-x  7 root    root        4096 дек 26 18:49  scripts
+drwxr-xr-x  3 root    root        4096 дек  5 13:14  snap
+drwxr-xr-x  3 root    root        4096 янв 13 22:56  TEMP
+-rwxrwxr-x  1 root    root    45353856 мая 23  2019  terraform
+-rw-r--r--  1 root    root    14907580 дек 19 16:54  terraform_0.12.0_linux_amd64.zip
+-rwxr-xr-x  1 root    root        2483 дек 25 21:56  test-services-2
+drwxr-xr-x  5 root    root        4096 дек 21 13:31  vagrant-project
+drwx------  6 root    root        4096 дек 21 15:05 'VirtualBox VMs'
+drwxr-xr-x  4 root    root        4096 дек  9 16:49  yandex-cloud
+root@PC-Ubuntu:~# 
+root@PC-Ubuntu:~# cd devops-netology/zakharovnpa/branching-git/branching/
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# А перед мержем ветки git-rebase выполним ее rebase на main
+А: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git status
+На ветке master
+нечего коммитить, нет изменений в рабочем каталоге
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git log --grpah --oneline
+fatal: неопознанный аргумент: --grpah
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git log --graph --oneline
+*   3e96331 (HEAD -> master) Merge branch 'git-merge'
+|\  
+| * 33e704b (git-merge) merge: use shift
+| * 371a772 merge: @ instead *
+* | e170b34 noname commit - cheange main
+|/  
+* e12ef31 prepare for merge and rebase
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# Переключаемся на ветку git-rebase и выполняем git rebase -i main
+Переключаемся: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git checkout git-rebase
+Переключено на ветку «git-rebase»
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git status
+На ветке git-rebase
+нечего коммитить, нет изменений в рабочем каталоге
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git log --graph --oneline
+* 184f0bc (HEAD -> git-rebase) git-rebase 2
+* 5e00112 git-rebase 1
+* e12ef31 prepare for merge and rebase
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git rebase -i master
+Автослияние branching/rebase.sh
+КОНФЛИКТ (содержимое): Конфликт слияния в branching/rebase.sh
+error: не удалось применить коммит 5e00112… git-rebase 1
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 5e00112... git-rebase 1
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# Если посмотреть содержимое файла rebase.sh, то увидим метки, оставленные гитом для решения конфликта:
+Если: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# cat rebase.sh 
+#!/bin/bash
+# display command line options
+
+count=1
+for param in "$@"; do
+<<<<<<< HEAD
+    echo "\$@ Parameter #$count = $param"
+=======
+    echo "Parameter: $param"
+>>>>>>> 5e00112... git-rebase 1
+    count=$(( $count + 1 ))
+done
+
+echo "====="
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# Удалим метки, отдав предпочтение варианту
+Удалим: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# vim rebase.sh 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# vim rebase.sh 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# cat rebase.sh 
+#!/bin/bash
+# display command line options
+
+count=1
+for param in "$@"; do
+    echo "\$@ Parameter #$count = $param"
+    count=$(( $count + 1 ))
+done
+
+echo "====="
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# сообщим гиту, что конфликт решен
+сообщим: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git add rebase.sh 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# и продолжим ребейз
+и: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git rebase --continue
+Автослияние branching/rebase.sh
+КОНФЛИКТ (содержимое): Конфликт слияния в branching/rebase.sh
+error: не удалось применить коммит 184f0bc… git-rebase 2
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 184f0bc... git-rebase 2
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# Давайте разрешим конфликт, оставив строчку echo "Next parameter: $param".
+Давайте: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# cat rebase.sh 
+#!/bin/bash
+# display command line options
+
+count=1
+for param in "$@"; do
+<<<<<<< HEAD
+    echo "\$@ Parameter #$count = $param"
+=======
+    echo "Next parameter: $param"
+>>>>>>> 184f0bc... git-rebase 2
+    count=$(( $count + 1 ))
+done
+
+echo "====="
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# vim rebase.sh 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# cat rebase.sh 
+#!/bin/bash
+# display command line options
+
+count=1
+for param in "$@"; do
+    echo "Next parameter: $param"
+    count=$(( $count + 1 ))
+done
+
+echo "====="
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# Далее опять сообщаем гиту о том, что конфликт разрешен git add rebase.sh
+Далее: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git add rebase.sh 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# и продолжим ребейз git rebase --continue
+и: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git rebase --continue
+[отделённый HEAD 0ec339f] git-rebase 2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Successfully rebased and updated refs/heads/git-rebase.
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# И попробуем выполнить git push, либо git push -u origin git-rebase чтобы точно указать что и куда мы хотим запушить
+И: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# Эта команда завершится с ошибкой:
+Эта: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git status
+На ветке git-rebase
+нечего коммитить, нет изменений в рабочем каталоге
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git push
+fatal: Не настроена точка назначения для отправки.
+Либо укажите URL с помощью командной строки, либо настройте внешний репозиторий с помощью
+
+    git remote add <имя> <адрес>
+
+а затем отправьте изменения с помощью имени внешнего репозитория
+
+    git push <имя>
+
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git push git@github.com:zakharovnpa/branching-git.git git-rebase
+To github.com:zakharovnpa/branching-git.git
+ ! [rejected]        git-rebase -> git-rebase (non-fast-forward)
+error: не удалось отправить некоторые ссылки в «git@github.com:zakharovnpa/branching-git.git»
+подсказка: Обновления были отклонены, так как верхушка вашей текущей ветки
+подсказка: позади ее внешней части. Заберите и слейте внешние изменения 
+подсказка: (например, с помощью «git pull …») перед повторной попыткой отправки
+подсказка: изменений.
+подсказка: Для дополнительной информации, смотрите «Note about fast-forwards»
+подсказка: в «git push --help».
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# Это произошло, потому что мы пытаемся перезаписать историю. Чтобы гит позволил нам это сделать, давайте добавим флаг force
+Это: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git push git@github.com:zakharovnpa/branching-git.git git-rebase -f
+Перечисление объектов: 7, готово.
+Подсчет объектов: 100% (7/7), готово.
+При сжатии изменений используется до 6 потоков
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 377 байтов | 377.00 КиБ/с, готово.
+Всего 4 (изменения 1), повторно использовано 0 (изменения 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:zakharovnpa/branching-git.git
+ + 184f0bc...0ec339f git-rebase -> git-rebase (forced update)
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# Теперь можно смержить ветку git-rebase в main без конфликтов и без дополнительного мерж-комита простой перемоткой.
+Теперь: команда не найдена
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git status
+На ветке git-rebase
+нечего коммитить, нет изменений в рабочем каталоге
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git checkout master
+Переключено на ветку «master»
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git status
+На ветке master
+нечего коммитить, нет изменений в рабочем каталоге
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git merge git-rebase
+Обновление 3e96331..0ec339f
+Fast-forward
+ branching/rebase.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
+
+```
+Получалась такая схема веток ![End-network-graph](/02-git-03-branching/Lesson/img/End-network-graph.png)
