@@ -1140,3 +1140,4 @@ root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# А пер�
 root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
 root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# 
 ```
+Получалась такая схема веток ![Network-Graph](/02-git-03-branching/Lesson/img/Network-Graph.png)
