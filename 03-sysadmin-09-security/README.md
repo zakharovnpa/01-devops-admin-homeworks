@@ -213,7 +213,7 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 
 Выполнена проверка на уязвимости сайта ` https://www.google.com/ `
 
-[Листинг проверки](03-sysadmin-09-security/Lesson/Lesson-2.md)
+[Листинг проверки](/03-sysadmin-09-security/Lesson/Lesson-2.md)
 
 Выполнена проверка на уязвимости ранее настроенного сайта ` https://localhost/ `
 
@@ -276,14 +276,45 @@ root@PC-Ubuntu:~/testssl/testssl.sh# ./testssl.sh -U --sneaky https://localhost/
 5. Установите на Ubuntu ssh сервер, сгенерируйте новый приватный ключ. Скопируйте свой публичный ключ на другой сервер. Подключитесь к серверу по SSH-ключу.
      
     **Ответ:**
+```sh
+
+```
     
 6. Переименуйте файлы ключей из задания 5. Настройте файл конфигурации SSH клиента, так чтобы вход на удаленный сервер осуществлялся по имени сервера.
     
     **Ответ:**
     
+```sh
+
+```
+    
 7. Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
     
     **Ответ:**
+Собран в файл дамп трафика утилитой tcpdump в формате pcap:
+```sh
+root@PC-Ubuntu:~# tcpdump -c 5 -i wlp3s6 -w 001.pcap
+tcpdump: listening on wlp3s6, link-type EN10MB (Ethernet), capture size 262144 bytes
+5 packets captured
+11 packets received by filter
+0 packets dropped by kernel
+
+```
+Чтение из файла дампа трафика утилитой tcpdump:
+```sh
+root@PC-Ubuntu:~# tcpdump -r 001.pcap
+reading from file 001.pcap, link-type EN10MB (Ethernet)
+14:04:14.969416 ARP, Request who-has ESP_3A6D69 tell ESP_3A6D69, length 28
+14:04:18.056645 IP PC-Ubuntu.33595 > lo-in-f95.1e100.net.443: UDP, length 33
+14:04:18.104805 IP lo-in-f95.1e100.net.443 > PC-Ubuntu.33595: UDP, length 25
+14:04:20.502492 IP WDMyCloud.53463 > 239.255.255.250.1900: UDP, length 421
+14:04:20.507568 IP WDMyCloud.53463 > 239.255.255.250.1900: UDP, length 430
+root@PC-Ubuntu:~# 
+
+```
+Чтение из файла дампа трафика утилитой wireshark:
+
+![]()
     
  ---
 ## Задание для самостоятельной отработки (необязательно к выполнению)
