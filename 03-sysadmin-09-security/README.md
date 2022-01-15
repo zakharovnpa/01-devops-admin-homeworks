@@ -3,15 +3,133 @@
 1. Установите Bitwarden плагин для браузера. Зарегестрируйтесь и сохраните несколько паролей.
     
     **Ответ:**
-    
+       Установлен Bitwarden, добавлен аккаунт на сайте alnado.ru
+       ![Bitwarden](/03-sysadmin-09-security/img/Bitwarden.png)
 2. Установите Google authenticator на мобильный телефон. Настройте вход в Bitwarden акаунт через Google authenticator OTP.
     
     **Ответ:**
+    Установлен, настроена двухфакторная аутентификация
+    ![google-authentucator](/03-sysadmin-09-security/img/google-authenticator.png)
     
 3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
     
     **Ответ:**
-    
+Установлен Apache    
+```sh
+root@PC-Ubuntu:~# type apache2
+apache2 является /usr/sbin/apache2
+```
+Сгенерирован самоподписанный сертификат:
+```sh
+root@PC-Ubuntu:~# sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+Generating a RSA private key
+................................................................+++++
+................+++++
+writing new private key to '/etc/ssl/private/apache-selfsigned.key'
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:RU
+State or Province Name (full name) [Some-State]:Samara
+Locality Name (eg, city) []:city
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:zakharovnpa
+Organizational Unit Name (eg, section) []:org
+Common Name (e.g. server FQDN or YOUR name) []:www.zakharovnpa.org
+Email Address []:zakharovnpa@gmail.com
+
+```
+Настроен тестовый сайт для работы по HTTPS:
+```sh
+root@PC-Ubuntu:/var/www/localhost# apache2ctl configtest
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Syntax OK
+
+```
+```sh
+root@PC-Ubuntu:~# mkdir -p /var/www/localhost
+root@PC-Ubuntu:~# 
+root@PC-Ubuntu:~# cd /var/www/localhost/
+root@PC-Ubuntu:/var/www/localhost# 
+root@PC-Ubuntu:/var/www/localhost# vim index.html
+root@PC-Ubuntu:/var/www/localhost# 
+```
+```sh
+root@PC-Ubuntu:/var/www/localhost# apache2ctl configtest
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Syntax OK
+```
+```sh
+root@PC-Ubuntu:/var/www/localhost# a2ensite localhost.conf
+Enabling site localhost.
+To activate the new configuration, you need to run:
+  systemctl reload apache2
+```
+```sh
+root@PC-Ubuntu:/var/www/localhost# systemctl reload apache2
+```
+```sh
+root@PC-Ubuntu:/var/www/localhost# vim index.html
+root@PC-Ubuntu:/var/www/localhost# 
+
+root@PC-Ubuntu:/var/www/localhost# 
+root@PC-Ubuntu:/var/www/localhost# systemctl reload apache2
+root@PC-Ubuntu:/var/www/localhost# 
+root@PC-Ubuntu:/var/www/localhost# 
+
+```
+```sh
+root@PC-Ubuntu:/etc/apache2/sites-available# vim localhost.conf
+root@PC-Ubuntu:/etc/apache2/sites-available# 
+root@PC-Ubuntu:/etc/apache2/sites-available# cat localhost.conf 
+<VirtualHost *:443>
+   ServerName localhost
+   DocumentRoot /var/www/localhost
+
+   SSLEngine on
+   SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+   SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+</VirtualHost>
+```
+```sh
+root@PC-Ubuntu:/etc/apache2/sites-available# vim localhost.conf
+root@PC-Ubuntu:/etc/apache2/sites-available# 
+root@PC-Ubuntu:/etc/apache2/sites-available# cat localhost.conf 
+<VirtualHost *:443>
+   ServerName localhost
+   DocumentRoot /var/www/localhost
+
+   SSLEngine on
+   SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+   SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+</VirtualHost>
+
+
+<VirtualHost *:80>
+    ServerName localhost
+    Redirect / https://localhost/
+</VirtualHost>
+```
+```sh
+root@PC-Ubuntu:/etc/apache2/sites-available# apachectl configtest
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Syntax OK
+```
+```sh
+root@PC-Ubuntu:/etc/apache2/sites-available# systemctl reload apache2
+```
+Сайт ` https://localhost ` доступен как по порту 443, так и по порту 80
+В браузере Chrom
+
+![]()
+
+В браузере Mozilla
+
+![]()
 4. Проверьте на TLS уязвимости произвольный сайт в интернете.
     
     **Ответ:**
