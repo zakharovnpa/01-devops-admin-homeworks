@@ -138,11 +138,11 @@ root@PC-Ubuntu:/etc/apache2/sites-available# systemctl reload apache2
     
     **Ответ:**
 
-Выполнена проверка на уязвимости сайта ` https://www.google.com/ `
+Выполнена быстрая проверка сайта ` https://www.google.com/ `
 
 [Листинг проверки](/03-sysadmin-09-security/Lesson/Lesson.md)
 
-Выполнена проверка на уязвимости ранее настроенного сайта ` https://localhost/ `
+Выполнена быстрая проверка ранее настроенного сайта ` https://localhost/ `
 
 ```ps
 root@PC-Ubuntu:~/testssl/testssl.sh# ./testssl.sh -e --fast --parallel https://localhost/
@@ -210,6 +210,14 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
  Done 2022-01-15 12:35:17 [  13s] -->> 127.0.0.1:443 (localhost) <<--
 
 ```
+
+Выполнена проверка на уязвимости сайта ` https://www.google.com/ `
+
+[Листинг проверки](/03-sysadmin-09-security/Lesson/Lesson.md)
+
+Выполнена проверка на уязвимости ранее настроенного сайта ` https://localhost/ `
+
+```ps
     
 5. Установите на Ubuntu ssh сервер, сгенерируйте новый приватный ключ. Скопируйте свой публичный ключ на другой сервер. Подключитесь к серверу по SSH-ключу.
      
