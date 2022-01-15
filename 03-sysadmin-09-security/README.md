@@ -276,22 +276,278 @@ root@PC-Ubuntu:~/testssl/testssl.sh# ./testssl.sh -U --sneaky https://localhost/
 5. Установите на Ubuntu ssh сервер, сгенерируйте новый приватный ключ. Скопируйте свой публичный ключ на другой сервер. Подключитесь к серверу по SSH-ключу.
      
     **Ответ:**
-```sh
+    
+Создана ВМ на Яндекс-Облаке. При создании terraform перебросил на ВМ ssh-ключ:
+    
+```tf
+root@PC-Ubuntu:~/netology-project/Docker-Compose/src/terraform# terraform apply -auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # yandex_compute_instance.node01 will be created
+  + resource "yandex_compute_instance" "node01" {
+      + allow_stopping_for_update = true
+      + created_at                = (known after apply)
+      + folder_id                 = (known after apply)
+      + fqdn                      = (known after apply)
+      + hostname                  = "node01.netology.cloud"
+      + id                        = (known after apply)
+      + metadata                  = {
+          + "ssh-keys" = <<-EOT
+                centos:ssh-rsa AAAAB3NzaC.......
+            ..................................................
+            
+           ..............................................................ZBYfJE7+FMs= root@PC-Ubuntu
+            EOT
+        }
+      + name                      = "node01"
+      + network_acceleration_type = "standard"
+      + platform_id               = "standard-v1"
+      + service_account_id        = (known after apply)
+      + status                    = (known after apply)
+      + zone                      = "ru-central1-a"
+
+     .
+     .
+     .
+     .
+     .
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + external_ip_address_node01_yandex_cloud = (known after apply)
+  + internal_ip_address_node01_yandex_cloud = (known after apply)
+yandex_vpc_network.default: Creating...
+yandex_vpc_network.default: Creation complete after 1s [id=enp8vccjnq019sesfhbh]
+yandex_vpc_subnet.default: Creating...
+yandex_vpc_subnet.default: Creation complete after 1s [id=e9bbsqo1g3a7gnd62263]
+yandex_compute_instance.node01: Creating...
+yandex_compute_instance.node01: Still creating... [10s elapsed]
+yandex_compute_instance.node01: Still creating... [20s elapsed]
+yandex_compute_instance.node01: Still creating... [30s elapsed]
+yandex_compute_instance.node01: Still creating... [40s elapsed]
+yandex_compute_instance.node01: Creation complete after 41s [id=fhmmrtoehh6u052ipamb]
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+external_ip_address_node01_yandex_cloud = "62.84.124.156"
+internal_ip_address_node01_yandex_cloud = "192.168.101.9"
+
+```
+Подключение к ВМ по ssh:
+
+```ps
+root@PC-Ubuntu:~# ssh centos@62.84.124.156
+The authenticity of host '62.84.124.156 (62.84.124.156)' can't be established.
+ECDSA key fingerprint is SHA256:QS67HU8m6bCVeUHQypaXzbMeKAWf/OWRxJlFl3S3KuU.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '62.84.124.156' (ECDSA) to the list of known hosts.
+```
+Смотрим версию ОС:
+```ps
+[root@node01 ~]# cat /etc/*release
+CentOS Linux release 7.9.2009 (Core)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.9.2009 (Core)
+CentOS Linux release 7.9.2009 (Core)
+
+```
+Аудит ключа на сервере
+```ps
+root@PC-Ubuntu:~# ssh-audit 62.84.124.156
+# general
+(gen) banner: SSH-2.0-OpenSSH_7.4
+(gen) software: OpenSSH 7.4
+(gen) compatibility: OpenSSH 7.3+ (some functionality from 6.6), Dropbear SSH 2016.73+ (some functionality from 0.52)
+(gen) compression: enabled (zlib@openssh.com)
+
+# key exchange algorithms
+(kex) curve25519-sha256                     -- [warn] unknown algorithm
+(kex) curve25519-sha256@libssh.org          -- [info] available since OpenSSH 6.5, Dropbear SSH 2013.62
+(kex) ecdh-sha2-nistp256                    -- [fail] using weak elliptic curves
+                                            `- [info] available since OpenSSH 5.7, Dropbear SSH 2013.62
+(kex) ecdh-sha2-nistp384                    -- [fail] using weak elliptic curves
+                                            `- [info] available since OpenSSH 5.7, Dropbear SSH 2013.62
+(kex) ecdh-sha2-nistp521                    -- [fail] using weak elliptic curves
+                                            `- [info] available since OpenSSH 5.7, Dropbear SSH 2013.62
+(kex) diffie-hellman-group-exchange-sha256  -- [warn] using custom size modulus (possibly weak)
+                                            `- [info] available since OpenSSH 4.4
+(kex) diffie-hellman-group16-sha512         -- [info] available since OpenSSH 7.3, Dropbear SSH 2016.73
+(kex) diffie-hellman-group18-sha512         -- [info] available since OpenSSH 7.3
+(kex) diffie-hellman-group-exchange-sha1    -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 2.3.0
+(kex) diffie-hellman-group14-sha256         -- [info] available since OpenSSH 7.3, Dropbear SSH 2016.73
+(kex) diffie-hellman-group14-sha1           -- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 3.9, Dropbear SSH 0.53
+(kex) diffie-hellman-group1-sha1            -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [fail] disabled (in client) since OpenSSH 7.0, logjam attack
+                                            `- [warn] using small 1024-bit modulus
+                                            `- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 2.3.0, Dropbear SSH 0.28
+
+# host-key algorithms
+(key) ssh-rsa                               -- [info] available since OpenSSH 2.5.0, Dropbear SSH 0.28
+(key) rsa-sha2-512                          -- [info] available since OpenSSH 7.2
+(key) rsa-sha2-256                          -- [info] available since OpenSSH 7.2
+(key) ecdsa-sha2-nistp256                   -- [fail] using weak elliptic curves
+                                            `- [warn] using weak random number generator could reveal the key
+                                            `- [info] available since OpenSSH 5.7, Dropbear SSH 2013.62
+(key) ssh-ed25519                           -- [info] available since OpenSSH 6.5
+
+# encryption algorithms (ciphers)
+(enc) chacha20-poly1305@openssh.com         -- [info] available since OpenSSH 6.5
+                                            `- [info] default cipher since OpenSSH 6.9.
+(enc) aes128-ctr                            -- [info] available since OpenSSH 3.7, Dropbear SSH 0.52
+(enc) aes192-ctr                            -- [info] available since OpenSSH 3.7
+(enc) aes256-ctr                            -- [info] available since OpenSSH 3.7, Dropbear SSH 0.52
+(enc) aes128-gcm@openssh.com                -- [info] available since OpenSSH 6.2
+(enc) aes256-gcm@openssh.com                -- [info] available since OpenSSH 6.2
+(enc) aes128-cbc                            -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [warn] using weak cipher mode
+                                            `- [info] available since OpenSSH 2.3.0, Dropbear SSH 0.28
+(enc) aes192-cbc                            -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [warn] using weak cipher mode
+                                            `- [info] available since OpenSSH 2.3.0
+(enc) aes256-cbc                            -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [warn] using weak cipher mode
+                                            `- [info] available since OpenSSH 2.3.0, Dropbear SSH 0.47
+(enc) blowfish-cbc                          -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [fail] disabled since Dropbear SSH 0.53
+                                            `- [warn] disabled (in client) since OpenSSH 7.2, legacy algorithm
+                                            `- [warn] using weak cipher mode
+                                            `- [warn] using small 64-bit block size
+                                            `- [info] available since OpenSSH 1.2.2, Dropbear SSH 0.28
+(enc) cast128-cbc                           -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [warn] disabled (in client) since OpenSSH 7.2, legacy algorithm
+                                            `- [warn] using weak cipher mode
+                                            `- [warn] using small 64-bit block size
+                                            `- [info] available since OpenSSH 2.1.0
+(enc) 3des-cbc                              -- [fail] removed (in server) since OpenSSH 6.7, unsafe algorithm
+                                            `- [warn] using weak cipher
+                                            `- [warn] using weak cipher mode
+                                            `- [warn] using small 64-bit block size
+                                            `- [info] available since OpenSSH 1.2.2, Dropbear SSH 0.28
+
+# message authentication code algorithms
+(mac) umac-64-etm@openssh.com               -- [warn] using small 64-bit tag size
+                                            `- [info] available since OpenSSH 6.2
+(mac) umac-128-etm@openssh.com              -- [info] available since OpenSSH 6.2
+(mac) hmac-sha2-256-etm@openssh.com         -- [info] available since OpenSSH 6.2
+(mac) hmac-sha2-512-etm@openssh.com         -- [info] available since OpenSSH 6.2
+(mac) hmac-sha1-etm@openssh.com             -- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 6.2
+(mac) umac-64@openssh.com                   -- [warn] using encrypt-and-MAC mode
+                                            `- [warn] using small 64-bit tag size
+                                            `- [info] available since OpenSSH 4.7
+(mac) umac-128@openssh.com                  -- [warn] using encrypt-and-MAC mode
+                                            `- [info] available since OpenSSH 6.2
+(mac) hmac-sha2-256                         -- [warn] using encrypt-and-MAC mode
+                                            `- [info] available since OpenSSH 5.9, Dropbear SSH 2013.56
+(mac) hmac-sha2-512                         -- [warn] using encrypt-and-MAC mode
+                                            `- [info] available since OpenSSH 5.9, Dropbear SSH 2013.56
+(mac) hmac-sha1                             -- [warn] using encrypt-and-MAC mode
+                                            `- [warn] using weak hashing algorithm
+                                            `- [info] available since OpenSSH 2.1.0, Dropbear SSH 0.28
+
+# algorithm recommendations (for OpenSSH 7.4)
+(rec) -diffie-hellman-group1-sha1           -- kex algorithm to remove 
+(rec) -diffie-hellman-group14-sha1          -- kex algorithm to remove 
+(rec) -diffie-hellman-group-exchange-sha1   -- kex algorithm to remove 
+(rec) -diffie-hellman-group-exchange-sha256 -- kex algorithm to remove 
+(rec) -ecdh-sha2-nistp256                   -- kex algorithm to remove 
+(rec) -ecdh-sha2-nistp384                   -- kex algorithm to remove 
+(rec) -ecdh-sha2-nistp521                   -- kex algorithm to remove 
+(rec) -ecdsa-sha2-nistp256                  -- key algorithm to remove 
+(rec) -3des-cbc                             -- enc algorithm to remove 
+(rec) -blowfish-cbc                         -- enc algorithm to remove 
+(rec) -cast128-cbc                          -- enc algorithm to remove 
+(rec) -aes128-cbc                           -- enc algorithm to remove 
+(rec) -aes192-cbc                           -- enc algorithm to remove 
+(rec) -aes256-cbc                           -- enc algorithm to remove 
+(rec) -hmac-sha1                            -- mac algorithm to remove 
+(rec) -hmac-sha2-256                        -- mac algorithm to remove 
+(rec) -hmac-sha2-512                        -- mac algorithm to remove 
+(rec) -umac-64@openssh.com                  -- mac algorithm to remove 
+(rec) -umac-128@openssh.com                 -- mac algorithm to remove 
+(rec) -hmac-sha1-etm@openssh.com            -- mac algorithm to remove 
+(rec) -umac-64-etm@openssh.com              -- mac algorithm to remove 
+
 
 ```
     
 6. Переименуйте файлы ключей из задания 5. Настройте файл конфигурации SSH клиента, так чтобы вход на удаленный сервер осуществлялся по имени сервера.
     
     **Ответ:**
+ Переименовал ключ:
+ ```ps
+ root@PC-Ubuntu:~/.ssh# cp id_rsa server_node01.key
+ ```
     
+Настроен файл конфигурации ssh клиента:
+
 ```sh
+root@PC-Ubuntu:~/.ssh# cat config 
+Host node01
+  HostName 62.84.124.156
+  IdentityFile ~/.ssh/server_node01.key
+  User centos
+```
+Подключение по имени сервера:
+
+```ps
+root@PC-Ubuntu:~/.ssh# ssh node01
+[centos@node01 ~]$ 
+[centos@node01 ~]$ uptime
+ 15:34:52 up 30 min,  2 users,  load average: 0,00, 0,01, 0,05
+[centos@node01 ~]$ 
+[centos@node01 ~]$ cat /etc/*release
+CentOS Linux release 7.9.2009 (Core)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.9.2009 (Core)
+CentOS Linux release 7.9.2009 (Core)
 
 ```
-    
 7. Соберите дамп трафика утилитой tcpdump в формате pcap, 100 пакетов. Откройте файл pcap в Wireshark.
     
     **Ответ:**
 Собран в файл дамп трафика утилитой tcpdump в формате pcap:
+
 ```sh
 root@PC-Ubuntu:~# tcpdump -c 5 -i wlp3s6 -w 001.pcap
 tcpdump: listening on wlp3s6, link-type EN10MB (Ethernet), capture size 262144 bytes
