@@ -313,8 +313,12 @@ root@PC-Ubuntu:~#
 
 ```
 Чтение из файла дампа трафика утилитой wireshark:
+```sh
+root@PC-Ubuntu:~# wireshark --read-file 002.pcap
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+```
 
-![]()
+![wireshark](/03-sysadmin-09-security/img/wireshark.png)
     
  ---
 ## Задание для самостоятельной отработки (необязательно к выполнению)
