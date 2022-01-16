@@ -951,7 +951,8 @@ root@PC-Ubuntu:~/devops-netology/zakharovnpa/branching-git/branching# git log --
 * e12ef31 prepare for merge and rebase
 
 ```
-Получалась такая схема веток ![End-network-graph](/02-git-03-branching/Lesson/img/End-network-graph.png)
+
+Получалась такая [схема веток](https://github.com/zakharovnpa/branching-git/network) ![End-network-graph](/02-git-03-branching/Lesson/img/End-network-graph.png)
 
 
 Цель задания - попробовать на практике то, как выглядит решение конфликтов.
